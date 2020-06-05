@@ -10,4 +10,4 @@
 /compiler.xml
 /Fxml test.iml
 .idea
-out
+/out/
