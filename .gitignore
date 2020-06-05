@@ -8,3 +8,6 @@
 /encodings.xml
 /description.html
 /compiler.xml
+/Fxml test.iml
+.idea
+.out
