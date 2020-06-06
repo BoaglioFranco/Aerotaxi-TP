@@ -1,8 +1,8 @@
 package sample;
 
-import java.io.Serializable;
 
-public class Clients implements Serializable {
+
+public class Client extends User {
 
     private String name = "";
     private String surname= "";
@@ -52,11 +52,11 @@ public class Clients implements Serializable {
     private int totalGastado;
     //Mejor categoria de vuelo utilizado
 
-    public Clients(){
+    public Client(){
         totalGastado = 0;
     }
 
-    public Clients(String name, String surname, int age, String dni){
+    public Client(String name, String surname, int age, String dni){
         this.name = name;
         this.surname = surname;
         this.age = age;

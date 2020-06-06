@@ -1,8 +1,6 @@
 package sample;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileWriter;
@@ -15,7 +13,7 @@ import java.util.List;
 import java.lang.reflect.Type;
 
 public class DataWarehouse {
-    public static List<Clients> clientList = new LinkedList<>();;
+    public static List<Client> clientList = new LinkedList<>();;
 
     static {
 
@@ -23,7 +21,7 @@ public class DataWarehouse {
         /// Reader para ubicar el path de mi archivo JSON.
         Reader reader = Files.newBufferedReader(Paths.get("src/sample/Clients.JSON"));
         /// Esto es para obtener el tipo exacto de la Linkedlist ya que puede ser generico.
-        Type userListType = new TypeToken<LinkedList<Clients>>(){}.getType();
+        Type userListType = new TypeToken<LinkedList<Client>>(){}.getType();
 
         clientList = new Gson().fromJson(reader,userListType);
         }
@@ -41,7 +39,7 @@ public class DataWarehouse {
 
             String element = new Gson().toJson(
                     clientList,
-                    new TypeToken<LinkedList<Clients>>() {}.getType());
+                    new TypeToken<LinkedList<Client>>() {}.getType());
 
             file.write(element);
 
