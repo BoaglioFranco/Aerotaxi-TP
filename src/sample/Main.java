@@ -24,9 +24,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
-        DataWarehouse A = new DataWarehouse();
-        A.fromJsontoUserslist();
-
 }
 
 }
