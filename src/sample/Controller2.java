@@ -1,18 +1,19 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
+
 import java.io.IOException;
 
-public class Controller {
+public class Controller2 {
 
-    /// cambio de screen.
+    //TODO: mejorar este metodo para mas claridad .
     public void changeScreen(ActionEvent actionEvent) throws IOException {
-        Parent root2 = FXMLLoader.load(getClass().getResource("sample2.fxml"));
+        Parent root2 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene scene2 = new Scene(root2);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);
