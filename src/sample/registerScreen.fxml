@@ -4,10 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background3" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background3" stylesheets="@sample.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterScreenController">
    <children>
-      <JFXButton layoutX="75.0" layoutY="345.0" styleClass="background" textFill="#fffbfb">
+      <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="345.0" styleClass="background" stylesheets="@sample.css" text="francoPuto" textFill="#fffbfb">
          <font>
             <Font size="15.0" />
          </font>
