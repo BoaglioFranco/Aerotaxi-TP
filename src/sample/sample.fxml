@@ -43,8 +43,8 @@
             </Label>
             <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
             <TextField promptText="*********" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-            <JFXButton buttonType="RAISED" text="Log in" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <JFXButton buttonType="RAISED" onAction="#changeScreen" text="Register" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <JFXButton buttonType="RAISED" onAction="#changeScreen" text="Log in" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <JFXButton fx:id="registerButton" buttonType="RAISED" onAction="#toRegisterScreen" text="Register" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
   </items>

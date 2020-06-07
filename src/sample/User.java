@@ -3,7 +3,7 @@ package sample;
 import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class User implements Serializable {
+public class User implements Serializable {
 
     private String username = "";
     private String password= "";
@@ -11,6 +11,8 @@ public abstract class User implements Serializable {
     private String surname= "";
     private int age;
     private String dni = ""; //TODO: Regex para validarlo
+    private int totalGastado;
+    //Mejor categoria de vuelo utilizado
 
     public String getName() {
         return name;
@@ -51,9 +53,6 @@ public abstract class User implements Serializable {
     public void setTotalGastado(int totalGastado) {
         this.totalGastado = totalGastado;
     }
-
-    private int totalGastado;
-    //Mejor categoria de vuelo utilizado
 
     public User(){
         totalGastado = 0;

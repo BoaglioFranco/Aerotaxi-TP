@@ -18,4 +18,14 @@ public class Controller {
         window.setScene(scene2);
         window.show();
     }
+
+    public void toRegisterScreen(ActionEvent actionEvent) throws IOException{
+        Parent root3 = FXMLLoader.load(getClass().getResource("registerScreen.fxml"));
+        Scene scene2 = new Scene(root3);
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene2);
+        window.setTitle("DOU?");
+        window.show();
+    }
+
 }

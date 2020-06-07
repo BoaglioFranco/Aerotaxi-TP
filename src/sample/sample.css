@@ -4,3 +4,16 @@
 .jfButton{
    -fx-background-color: #383838
 }
+
+.text{
+    font-size: 13;
+}
+
+
+.background2{
+    -fx-background-color: #A2ACAB
+}
+
+.background3{
+    -fx-background-color: #53565A
+}
