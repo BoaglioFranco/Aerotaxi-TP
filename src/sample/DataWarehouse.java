@@ -13,7 +13,7 @@ import java.util.List;
 import java.lang.reflect.Type;
 
 public class DataWarehouse {
-    public static List<Client> clientList = new LinkedList<>();;
+    public static List<User> clientList = new LinkedList<>();;
 
     static {
 
@@ -21,7 +21,7 @@ public class DataWarehouse {
         /// Reader para ubicar el path de mi archivo JSON.
         Reader reader = Files.newBufferedReader(Paths.get("src/sample/Clients.JSON"));
         /// Esto es para obtener el tipo exacto de la Linkedlist ya que puede ser generico.
-        Type userListType = new TypeToken<LinkedList<Client>>(){}.getType();
+        Type userListType = new TypeToken<LinkedList<User>>(){}.getType();
 
         clientList = new Gson().fromJson(reader,userListType);
         }
@@ -39,7 +39,7 @@ public class DataWarehouse {
 
             String element = new Gson().toJson(
                     clientList,
-                    new TypeToken<LinkedList<Client>>() {}.getType());
+                    new TypeToken<LinkedList<User>>() {}.getType());
 
             file.write(element);
 
