@@ -1,15 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.layout.Layer?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background3" stylesheets="@sample.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterScreenController">
    <children>
-      <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="345.0" styleClass="background" stylesheets="@sample.css" text="francoPuto" textFill="#fffbfb">
+      <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="359.0" style="-fx-background-color: #4C516D;" text="Registrarse" textFill="#fffbfb">
          <font>
             <Font size="15.0" />
          </font>
       </JFXButton>
+      <Layer layoutX="98.0" layoutY="100.0" />
+      <HBox layoutX="17.0" layoutY="57.0" spacing="5.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="156.0" text="Nombre del Usuario">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField />
+         </children>
+      </HBox>
+      <HBox layoutX="23.0" layoutY="188.0" spacing="10.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="54.0" text="Nombre">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="13.0" />
+               </font>
+            </Label>
+            <JFXTextField />
+         </children>
+      </HBox>
+      <HBox layoutX="25.0" layoutY="226.0" spacing="10.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="51.0" text="Apellido">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="13.0" />
+               </font>
+            </Label>
+            <JFXTextField />
+         </children>
+      </HBox>
+      <HBox layoutX="26.0" layoutY="298.0" spacing="25.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="33.0" text="Edad">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXTextField />
+         </children>
+      </HBox>
+      <HBox layoutX="39.0" layoutY="100.0" spacing="10.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="129.0" text="Contraseña">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField />
+         </children>
+      </HBox>
+      <Label layoutX="9.0" layoutY="152.0" prefHeight="17.0" prefWidth="156.0" text="Datos Personales">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="14.0" prefHeight="29.0" prefWidth="216.0" text="Datos del Usuario">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="532.0" layoutY="355.0" style="-fx-background-color: #4C516D;" text="Atras" textFill="#fffbfb">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <HBox layoutX="25.0" layoutY="263.0" spacing="10.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="51.0" text="DNI">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="13.0" />
+               </font>
+            </Label>
+            <JFXTextField />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
