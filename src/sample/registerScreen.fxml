@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.layout.Layer?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +14,7 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-      <Layer layoutX="98.0" layoutY="100.0" />
+
       <HBox layoutX="17.0" layoutY="57.0" spacing="5.0">
          <children>
             <Label prefHeight="25.0" prefWidth="156.0" text="Nombre del Usuario">
@@ -76,7 +75,7 @@
             <Font name="Microsoft JhengHei Light" size="20.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="532.0" layoutY="355.0" style="-fx-background-color: #4C516D;" text="Atras" textFill="#fffbfb">
+      <JFXButton buttonType="RAISED" layoutX="532.0" layoutY="355.0" onAction="#gotoPrincipalScreen" style="-fx-background-color: #4C516D;" text="Atras" textFill="#fffbfb">
          <font>
             <Font size="15.0" />
          </font>
