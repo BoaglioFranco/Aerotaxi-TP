@@ -1,4 +1,4 @@
-package sample;
+package Aerotaxi.Core;
 
 import java.io.Serializable;
 import java.text.NumberFormat;

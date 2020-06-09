@@ -1,4 +1,4 @@
-package sample;
+package Aerotaxi.Controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -74,7 +74,7 @@ public class RegisterScreenController implements Initializable {
     ///TODO : MEJORAR ESTE CODIGO A ALMO MAS LEGIBLE
     public void gotoPrincipalScreen(ActionEvent actionEvent) throws IOException {
 
-        Parent root2 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root2 = FXMLLoader.load(getClass().getResource("/Resoruces/sample.fxml"));
         Scene scene2 = new Scene(root2);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);

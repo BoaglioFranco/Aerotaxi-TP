@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #4C516D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #4C516D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.Controller">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #D9E1E2;">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="50.0" layoutY="178.0">
                <image>
-                  <Image url="@../sample/logo.png" />
+                  <Image url="@logo.png" />
                </image>
             </ImageView>
          </children>

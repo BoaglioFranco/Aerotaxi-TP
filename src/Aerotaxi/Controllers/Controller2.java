@@ -1,4 +1,4 @@
-package sample;
+package Aerotaxi.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class Controller2 {
 
     //TODO: mejorar este metodo para mas claridad .
     public void changeScreen(ActionEvent actionEvent) throws IOException {
-        Parent root2 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root2 = FXMLLoader.load(getClass().getResource("/Resoruces/sample.fxml"));
         Scene scene2 = new Scene(root2);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);

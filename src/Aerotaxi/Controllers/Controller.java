@@ -1,5 +1,6 @@
-package sample;
+package Aerotaxi.Controllers;
 
+import Aerotaxi.Core.DataWarehouse;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -32,7 +33,7 @@ public class Controller {
     private Label errorLabel;
 
     public void toRegisterScreen(ActionEvent actionEvent) throws IOException{
-        Parent root3 = FXMLLoader.load(getClass().getResource("registerScreen.fxml"));
+        Parent root3 = FXMLLoader.load(getClass().getResource("/Resoruces/registerScreen.fxml"));
         Scene scene2 = new Scene(root3, 800, 600);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);

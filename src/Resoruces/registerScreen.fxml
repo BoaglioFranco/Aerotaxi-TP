@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterScreenController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.RegisterScreenController">
    <children>
       <JFXButton fx:id="confirmButton" buttonType="RAISED" layoutX="14.0" layoutY="554.0" onAction="#registerUser" style="-fx-background-color: #4C516D;" text="Registrarse" textFill="#fffbfb">
          <font>

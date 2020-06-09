@@ -1,4 +1,4 @@
-package sample;
+package Aerotaxi.Core;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 import java.lang.reflect.Type;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class DataWarehouse {
@@ -21,9 +20,11 @@ public class DataWarehouse {
 
     static { //Inicializador estatico
 
+
         try{
+
         /// Reader para ubicar el path de mi archivo JSON.
-        Reader reader = Files.newBufferedReader(Paths.get("src/sample/Clients.JSON"));
+        Reader reader = Files.newBufferedReader(Paths.get("/JsonFiles/Clients.json"));
         /// Esto es para obtener el tipo exacto de la Linkedlist ya que puede ser generico.
         Type userListType = new TypeToken<LinkedList<User>>(){}.getType();
 
@@ -41,7 +42,7 @@ public class DataWarehouse {
     public static void fromUserlistTojson(){
         try{
 
-            FileWriter file = new FileWriter("src/sample/Clients.JSON");
+            FileWriter file = new FileWriter("src/JsonFiles/Clients.json");
 
             String element = new Gson().toJson(
                     clientList,

@@ -1,4 +1,4 @@
-package sample;
+package Aerotaxi.Core;
 
 public class Aircraft {
 
