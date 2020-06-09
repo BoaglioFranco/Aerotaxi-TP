@@ -1,6 +1,8 @@
 package sample;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 public class User implements Serializable {
@@ -10,9 +12,24 @@ public class User implements Serializable {
     private String name = "";
     private String surname= "";
     private int age;
-    private String dni = ""; //TODO: Regex para validarlo
+    private String dni = "";
     private int totalGastado;
     //Mejor categoria de vuelo utilizado
+
+    public User(){
+        totalGastado = 0;
+    }
+
+    public User(String username, String password, String name, String surname, int age, String dni) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.dni = dni;
+        totalGastado = 0;
+    }
+
 
     public String getName() {
         return name;
@@ -30,41 +47,68 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean setUsername(String username) {
+        boolean isValid = username.length() > 4 && username.length() < 21;
+        if(isValid)
+            this.username = username;
+        return isValid;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public boolean setPassword(String password) {
+        boolean isValid = password.length() > 4 && password.length() < 21;
+        if(isValid)
+            this.password = password;
+        return isValid;
+    }
+
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public boolean setAge(int age) {
+        boolean isValid = age > 9 && age < 99;
+        if(isValid) this.age = age;
+
+        return isValid;
     }
 
     public String getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    private String dniFormatter(String dni){ //para ponerle puntitos al dni asi quedan lindos, terrible huevada
+        NumberFormat nf = NumberFormat.getInstance(new Locale("es", "ES"));
+        return nf.format(Integer.parseInt(dni));
+    }
+
+
+    public boolean setDni(String dni) { //DNI puede tener 7 u 8 digitos, con o sin puntos
+        boolean isValid = dni.matches("(\\d{1,2}\\.\\d{3}\\.\\d{3})|\\d{7,8}");
+        if(isValid){
+            if(dni.length() == 7 || dni.length() == 8) {
+                this.dni = dniFormatter(dni);
+            }
+            else{
+                this.dni = dni;
+            }
+        }
+        return isValid;
     }
 
     public int getTotalGastado() {
         return totalGastado;
     }
 
-    public void setTotalGastado(int totalGastado) {
-        this.totalGastado = totalGastado;
-    }
 
-    public User(){
-        totalGastado = 0;
-    }
-
-    public User(String name, String surname, int age, String dni){
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.dni = dni;
-        totalGastado = 0;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -80,19 +124,4 @@ public class User implements Serializable {
         return Objects.hash(getUsername(), getPassword());
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

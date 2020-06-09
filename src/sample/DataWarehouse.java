@@ -11,11 +11,15 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 import java.lang.reflect.Type;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class DataWarehouse {
-    public static List<User> clientList = new LinkedList<>();;
+    private static List<User> clientList = new LinkedList<>();
+    private static User loggedUser;
 
-    static {
+
+    static { //Inicializador estatico
 
         try{
         /// Reader para ubicar el path de mi archivo JSON.
@@ -23,7 +27,9 @@ public class DataWarehouse {
         /// Esto es para obtener el tipo exacto de la Linkedlist ya que puede ser generico.
         Type userListType = new TypeToken<LinkedList<User>>(){}.getType();
 
-        clientList = new Gson().fromJson(reader,userListType);
+        //clientList = new Gson().fromJson(reader,userListType);
+            clientList.add(new User("franco", "12345", "franco", "b", 69, "69420420"));
+            clientList.add(new User("facu69", "12345", "facu", "b", 69, "69699996"));
         }
         catch (Exception ex) {
            ex.printStackTrace();
@@ -50,6 +56,25 @@ public class DataWarehouse {
             e.printStackTrace();
         }
 
+    }
+
+    public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
+
+        boolean found;
+        try {
+            loggedUser = clientList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
+                    .collect(Collectors.toList()).get(0); //Busca un user en la lista con respecto a lo que indico el usuario
+                    found = true;
+        }catch (Exception e){
+            found = false;
+        }
+        return found;
+    }
+
+
+    public static boolean isUsernameTaken(String username){ //para registrarse
+
+        return clientList.stream().anyMatch(c -> username.equals(c.getUsername()));
     }
 
 
