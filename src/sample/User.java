@@ -35,16 +35,23 @@ public class User implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public boolean setName(String name) {
+        boolean isValid = name.length() > 1 && name.length() < 21;
+        if(isValid)
+            this.name = name;
+        return isValid;
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public boolean setSurname(String surname) {
+        boolean isValid = surname.length() > 1 && surname.length() < 21;
+        if(isValid)
+            this.surname = surname;
+        return isValid;
+
     }
 
 

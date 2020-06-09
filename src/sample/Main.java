@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Aerotaxi");
+        primaryStage.setTitle("Aerotaxi - Fly with us");
         Scene scene = new Scene(root, 800, 600);
         //scene.getStylesheets().add("sample/sample.css");
         primaryStage.setScene(scene);

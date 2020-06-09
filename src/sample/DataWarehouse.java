@@ -78,5 +78,11 @@ public class DataWarehouse {
     }
 
 
+    public static void addAndLogInUser(User user){
+        clientList.add(user);
+        loggedUser = user;
+    }
+
+
 
 }
