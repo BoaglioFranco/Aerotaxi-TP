@@ -1,5 +1,7 @@
 package Aerotaxi.Controllers;
 
+import Aerotaxi.Core.DataWarehouse;
+import Aerotaxi.Core.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
@@ -13,7 +15,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -94,7 +95,7 @@ public class RegisterScreenController implements Initializable {
     ///TODO : MEJORAR ESTE CODIGO A ALMO MAS LEGIBLE
     public void gotoPrincipalScreen(ActionEvent actionEvent) throws IOException { //codigo para cambiar la escena a la de login
 
-        Parent root2 = FXMLLoader.load(getClass().getResource("/Resoruces/sample.fxml"));
+        Parent root2 = FXMLLoader.load(getClass().getResource("/Resource/sample.fxml"));
         Scene scene2 = new Scene(root2);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);

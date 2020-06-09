@@ -33,7 +33,7 @@ public class Controller {
     private Label errorLabel;
 
     public void toRegisterScreen(ActionEvent actionEvent) throws IOException{
-        Parent root3 = FXMLLoader.load(getClass().getResource("/Resoruces/registerScreen.fxml"));
+        Parent root3 = FXMLLoader.load(getClass().getResource("/Resource/registerScreen.fxml"));
         Scene scene2 = new Scene(root3, 800, 600);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);

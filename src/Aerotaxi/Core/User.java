@@ -8,7 +8,8 @@ import java.util.Objects;
 public class User implements Serializable {
 
     private String username = "";
-    private String password= "";
+    private String password = "";
+
     private String name = "";
     private String surname= "";
     private int age;

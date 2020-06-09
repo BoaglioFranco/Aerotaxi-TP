@@ -1,4 +1,4 @@
-package sample;
+package Aerotaxi.Core;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Resource/sample.fxml"));
         primaryStage.setTitle("Aerotaxi - Fly with us");
         Scene scene = new Scene(root, 800, 600);
         //scene.getStylesheets().add("sample/sample.css");

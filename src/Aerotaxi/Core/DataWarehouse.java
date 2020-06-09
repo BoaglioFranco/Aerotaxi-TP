@@ -24,7 +24,7 @@ public class DataWarehouse {
         try{
 
         /// Reader para ubicar el path de mi archivo JSON.
-        Reader reader = Files.newBufferedReader(Paths.get("/JsonFiles/Clients.json"));
+        Reader reader = Files.newBufferedReader(Paths.get("src/JsonFiles/Clients.json"));
         /// Esto es para obtener el tipo exacto de la Linkedlist ya que puede ser generico.
         Type userListType = new TypeToken<LinkedList<User>>(){}.getType();
 
