@@ -49,7 +49,7 @@
          <children>
             <Label prefHeight="28.0" prefWidth="33.0" text="Edad">
                <font>
-                  <Font size="13.0" />
+                  <Font name="Microsoft YaHei Light" size="13.0" />
                </font>
             </Label>
             <JFXTextField fx:id="ageField" />
@@ -70,7 +70,7 @@
             <Font name="Microsoft JhengHei Light" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="56.0" prefHeight="29.0" prefWidth="216.0" text="Datos del Usuario">
+      <Label layoutX="15.0" layoutY="51.0" prefHeight="29.0" prefWidth="216.0" text="Datos del Usuario">
          <font>
             <Font name="Microsoft JhengHei Light" size="20.0" />
          </font>
@@ -90,5 +90,21 @@
             <JFXTextField fx:id="dniField" />
          </children>
       </HBox>
+      <Label layoutX="322.0" layoutY="138.0" text="Entre 5 y 20 caracteres" />
+      <Label layoutX="322.0" layoutY="199.0" text="Entre 5 y 20 caracteres" />
+      <HBox alignment="CENTER" layoutY="-6.0" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #4C516D;">
+         <children>
+            <Label alignment="TOP_LEFT" text="Aerotaxi - Registrarse" textFill="#f7ff02">
+               <font>
+                  <Font name="Comic Sans MS" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="errorLabel" layoutX="123.0" layoutY="557.0" prefHeight="26.0" prefWidth="315.0" textFill="RED">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
