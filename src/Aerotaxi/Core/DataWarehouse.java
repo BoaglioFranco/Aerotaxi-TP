@@ -1,6 +1,10 @@
 package Aerotaxi.Core;
 
+import Aerotaxi.Airplanes.Aircraft;
+import Aerotaxi.Utilities.CustomDeserializer;
+import Aerotaxi.Utilities.CustomSerializer;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileWriter;
@@ -8,30 +12,61 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.lang.reflect.Type;
 import java.util.stream.Collectors;
 
 public class DataWarehouse {
-    private static List<User> clientList = new LinkedList<>();
+    private static List<User> userList = new ArrayList<>();
+    private static List<Aircraft> aircraftList = new ArrayList<>();
+    //private static List<> flights = new ArrayList<>();
     private static User loggedUser;
 
 
     static { //Inicializador estatico
 
-
+        ///TODO : POR MOTIVOS DE PRUEBA
         try{
+            userList.add(new User("franco", "12345", "franco", "b", 69, "69420420"));
+            userList.add(new User("facu69", "12345", "facu", "b", 69, "69699996"));
+            userList.add(new Admin("FACU-ADMIN","BOCA-YO-TE-AMO"));
 
-        /// Reader para ubicar el path de mi archivo JSON.
-        Reader reader = Files.newBufferedReader(Paths.get("src/JsonFiles/Clients.json"));
-        /// Esto es para obtener el tipo exacto de la Linkedlist ya que puede ser generico.
-        Type userListType = new TypeToken<LinkedList<User>>(){}.getType();
+            GsonBuilder gb = new GsonBuilder();
+            List<User> al = new ArrayList<User>();
+            List<Aircraft> air = new ArrayList<Aircraft>();
 
-        //clientList = new Gson().fromJson(reader,userListType);
-            clientList.add(new User("franco", "12345", "franco", "b", 69, "69420420"));
-            clientList.add(new User("facu69", "12345", "facu", "b", 69, "69699996"));
+            // User - admin
+            gb.registerTypeAdapter(al.getClass(), new CustomDeserializer<User>());
+            gb.registerTypeAdapter(al.getClass(), new CustomSerializer<User>());
+
+            // aviones
+            gb.registerTypeAdapter(air.getClass(), new CustomDeserializer<Aircraft>());
+            gb.registerTypeAdapter(air.getClass(), new CustomSerializer<Aircraft>());
+            Gson gson = gb.create();
+
+            String json = gson.toJson(userList);
+            FileWriter file = null;
+
+            file = new FileWriter("src/JsonFiles/Clients.json");
+            file.write(json);
+
+            file.flush();
+            file.close();
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+              /// Carga de Json a listas
+
+            List<User> provisoria = gson.fromJson(json, al.getClass());
+
+
+
+
         }
+
+
         catch (Exception ex) {
            ex.printStackTrace();
        }
@@ -41,20 +76,35 @@ public class DataWarehouse {
     /// metodo para escribir el Json luego de creado un nuevo usuario o modificacion de uno.
     public static void fromUserlistTojson(){
         try{
+            //userList.add(new User("franco", "12345", "franco", "b", 69, "69420420"));
+            //userList.add(new User("facu69", "12345", "facu", "b", 69, "69699996"));
+            //userList.add(new Admin("FACU-ADMIN","BOCA-YO-TE-AMO"));
 
-            FileWriter file = new FileWriter("src/JsonFiles/Clients.json");
+            GsonBuilder gb = new GsonBuilder();
+            List<User> al = new ArrayList<User>();
+            List<Aircraft> air = new ArrayList<Aircraft>();
 
-            String element = new Gson().toJson(
-                    clientList,
-                    new TypeToken<LinkedList<User>>() {}.getType());
+            // User - admin
+            gb.registerTypeAdapter(al.getClass(), new CustomDeserializer<User>());
+            gb.registerTypeAdapter(al.getClass(), new CustomSerializer<User>());
 
-            file.write(element);
+            // aviones
+            gb.registerTypeAdapter(air.getClass(), new CustomDeserializer<Aircraft>());
+            gb.registerTypeAdapter(air.getClass(), new CustomSerializer<Aircraft>());
+            Gson gson = gb.create();
+
+            String json = gson.toJson(userList);
+            FileWriter file = null;
+
+            file = new FileWriter("src/JsonFiles/Clients.json");
+            file.write(json);
 
             file.flush();
             file.close();
+
         }
-        catch (IOException e){
-            e.printStackTrace();
+        catch (Exception ex) {
+            ex.printStackTrace();
         }
 
     }
@@ -63,7 +113,7 @@ public class DataWarehouse {
 
         boolean found;
         try {
-            loggedUser = clientList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
+            loggedUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
                     .collect(Collectors.toList()).get(0); //Busca un user en la lista con respecto a lo que indico el usuario
                     found = true;
         }catch (Exception e){
@@ -75,12 +125,12 @@ public class DataWarehouse {
 
     public static boolean isUsernameTaken(String username){ //para registrarse
 
-        return clientList.stream().anyMatch(c -> username.equals(c.getUsername()));
+        return userList.stream().anyMatch(c -> username.equals(c.getUsername()));
     }
 
 
     public static void addAndLogInUser(User user){
-        clientList.add(user);
+        userList.add(user);
         loggedUser = user;
     }
 

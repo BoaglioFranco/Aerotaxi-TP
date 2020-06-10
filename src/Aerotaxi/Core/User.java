@@ -2,19 +2,24 @@ package Aerotaxi.Core;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-public class User implements Serializable {
+public class User implements Serializable  {
 
-    private String username = "";
-    private String password = "";
-
+    protected String username = "";
+    protected String password = "";
     private String name = "";
     private String surname= "";
     private int age;
     private String dni = "";
     private int totalGastado;
+
+    protected String isA;
+
+
     //Mejor categoria de vuelo utilizado
 
     public User(){
@@ -29,6 +34,7 @@ public class User implements Serializable {
         this.age = age;
         this.dni = dni;
         totalGastado = 0;
+        isA = "User";
     }
 
 

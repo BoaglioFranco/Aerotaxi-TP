@@ -1,16 +1,1 @@
-[
-  {
-    "name": "Facundo",
-    "surname": "Monteagudo",
-    "age": 21,
-    "dni": "41333208",
-    "totalGastado": 0
-  },
-  {
-    "name": "Franco",
-    "surname": "Boaglio",
-    "age": 21,
-    "dni": "41333209",
-    "totalGastado": 0
-  }
-]
+[{"username":"franco","password":"12345","name":"franco","surname":"b","age":69,"dni":"69420420","totalGastado":0,"isA":"User"},{"username":"facu69","password":"12345","name":"facu","surname":"b","age":69,"dni":"69699996","totalGastado":0,"isA":"User"},{"username":"FACU-ADMIN","password":"BOCA-YO-TE-AMO","name":"","surname":"","age":0,"dni":"","totalGastado":0,"isA":"Admin"}]

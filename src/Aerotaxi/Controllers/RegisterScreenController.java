@@ -23,25 +23,18 @@ public class RegisterScreenController implements Initializable {
 
     @FXML
     private JFXButton confirmButton;
-
     @FXML
     private JFXTextField userField;
-
     @FXML
     private JFXTextField nameField;
-
     @FXML
     private JFXTextField surnameField;
-
     @FXML
     private JFXTextField ageField;
-
     @FXML
     private JFXTextField passField;
-
     @FXML
     private JFXTextField dniField;
-
     @FXML
     private Label errorLabel;
 
@@ -85,7 +78,9 @@ public class RegisterScreenController implements Initializable {
             if(validateInput()){
                 System.out.println("Registracion validarda");
                 DataWarehouse.addAndLogInUser(us);
-
+                try {
+                    goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
+                }catch (Exception e){  System.out.println("HASTAAAA LA PROXIMAAAA");}
                 //TODO: Cambiar de ventana
             }
         }
@@ -95,7 +90,7 @@ public class RegisterScreenController implements Initializable {
     ///TODO : MEJORAR ESTE CODIGO A ALMO MAS LEGIBLE
     public void gotoPrincipalScreen(ActionEvent actionEvent) throws IOException { //codigo para cambiar la escena a la de login
 
-        Parent root2 = FXMLLoader.load(getClass().getResource("/Resource/sample.fxml"));
+        Parent root2 = FXMLLoader.load(getClass().getResource("/Resources/sample.fxml"));
         Scene scene2 = new Scene(root2);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);
@@ -104,10 +99,18 @@ public class RegisterScreenController implements Initializable {
     }
 
 
+    public void goToScreen(ActionEvent actionEvent, String path, String title) throws IOException{
+        Parent root3 = FXMLLoader.load(getClass().getResource(path));
+        Scene scene2 = new Scene(root3, 800, 600);
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene2);
+        window.setTitle(title);
+        window.show();
+    }
+
 
     private boolean validateInput(){ //valida el input del usuario
         boolean result = false;
-
 
         if(!us.setUsername(userField.getText())){
             errorLabel.setText("Nombre de usuario invalido");

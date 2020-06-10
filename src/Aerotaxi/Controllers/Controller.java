@@ -33,7 +33,7 @@ public class Controller {
     private Label errorLabel;
 
     public void toRegisterScreen(ActionEvent actionEvent) throws IOException{
-        Parent root3 = FXMLLoader.load(getClass().getResource("/Resource/registerScreen.fxml"));
+        Parent root3 = FXMLLoader.load(getClass().getResource("/Resources/registerScreen.fxml"));
         Scene scene2 = new Scene(root3, 800, 600);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);
@@ -44,11 +44,11 @@ public class Controller {
     public void verifyLogin(){
 
 
-       if(DataWarehouse.validateUser(usernameInput.getText(), passwordInput.getText())){
-           System.out.println("Pasar a la ventana de la app principal");
-       }
-       else{
-           errorLabel.setText("Nombre de usuario o contraseña incorrectos");
-       }
+        if(DataWarehouse.validateUser(usernameInput.getText(), passwordInput.getText())){
+            System.out.println("Pasar a la ventana de la app principal");
+        }
+        else{
+            errorLabel.setText("Nombre de usuario o contraseña incorrectos");
+        }
     }
 }
