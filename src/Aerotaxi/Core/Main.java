@@ -10,9 +10,8 @@ import javafx.stage.Stage;
 
 import java.nio.file.Paths;
 
-public class Main extends Application {
 
-    MediaPlayer mediaPlayer;
+public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -24,20 +23,20 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
-    }
 
+    }
+    MediaPlayer mediaPlayer;
+    public void music(){
+        Media h = new Media(Paths.get("src/Resources/music.mp3").toUri().toString());
+        mediaPlayer = new MediaPlayer(h);
+        mediaPlayer.play();
+    }
 
     public static void main(String[] args) {
         launch(args);
 
     }
 
-    public void music() {
-        String s = "/Resources/music.mp3";
-        Media h = new Media(Paths.get(s).toUri().toString());
-        mediaPlayer = new MediaPlayer(h);
-        mediaPlayer.play();
 
-    }
 
 }

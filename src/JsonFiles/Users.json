@@ -1,0 +1,32 @@
+[
+  {
+    "username": "franco",
+    "password": "12345",
+    "name": "franco",
+    "surname": "b",
+    "age": 69,
+    "dni": "69420420",
+    "totalGastado": 0,
+    "isA": "User"
+  },
+  {
+    "username": "facu69",
+    "password": "12345",
+    "name": "facu",
+    "surname": "b",
+    "age": 69,
+    "dni": "69699996",
+    "totalGastado": 0,
+    "isA": "User"
+  },
+  {
+    "username": "FACU-ADMIN",
+    "password": "BOCA-YO-TE-AMO",
+    "name": "",
+    "surname": "",
+    "age": 0,
+    "dni": "",
+    "totalGastado": 0,
+    "isA": "Admin"
+  }
+]

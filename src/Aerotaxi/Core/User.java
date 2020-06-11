@@ -2,8 +2,6 @@ package Aerotaxi.Core;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -138,4 +136,14 @@ public class User implements Serializable  {
         return Objects.hash(getUsername(), getPassword());
     }
 
+    @Override
+    public String toString() {
+        return "Username: " + username +
+                "\nPassword: " + password +
+                "\nname: " + name +
+                "\nlastname: " + surname +
+                "\nAge: " + age +
+                "\nDNI : " + dni +
+                "\n@Class : " + isA + " -x";
+    }
 }
