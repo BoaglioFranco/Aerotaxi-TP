@@ -1,6 +1,6 @@
-package Aerotaxi.Airplanes;
+package Aerotaxi.Core.Airplanes;
 
-public class Aircraft {
+public abstract class Aircraft {
 
     private int fuelCapacity; //no sirve de nada
     private int costPerKm;
@@ -19,7 +19,12 @@ public class Aircraft {
     }
 
     private int passengerFee = 3500;
-    //class fee
+    private int classFee;
+
+    protected void setClassFee(int fee){this.classFee = fee;}
+    public int getClassFee(){ return classFee;}
+
+
 }
 
 enum PropulsionType {

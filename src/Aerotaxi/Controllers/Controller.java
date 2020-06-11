@@ -32,6 +32,17 @@ public class Controller {
     @FXML
     private Label errorLabel;
 
+
+    //TODO: mejorar este codigo
+    public void goToScreen(ActionEvent actionEvent, String path, String title) throws IOException{
+        Parent root3 = FXMLLoader.load(getClass().getResource(path));
+        Scene scene2 = new Scene(root3, 800, 600);
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene2);
+        window.setTitle(title);
+        window.show();
+    }
+
     public void toRegisterScreen(ActionEvent actionEvent) throws IOException{
         Parent root3 = FXMLLoader.load(getClass().getResource("/Resources/registerScreen.fxml"));
         Scene scene2 = new Scene(root3, 800, 600);
@@ -41,11 +52,13 @@ public class Controller {
         window.show();
     }
 
-    public void verifyLogin(){
+    public void verifyLogin(ActionEvent event){
 
 
         if(DataWarehouse.validateUser(usernameInput.getText(), passwordInput.getText())){
-            System.out.println("Pasar a la ventana de la app principal");
+            try {
+                goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
+            }catch (Exception e){  System.out.println("HASTAAAA LA PROXIMAAAA");}
         }
         else{
             errorLabel.setText("Nombre de usuario o contraseña incorrectos");

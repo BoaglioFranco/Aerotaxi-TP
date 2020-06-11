@@ -81,7 +81,7 @@ public class RegisterScreenController implements Initializable {
                 try {
                     goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
                 }catch (Exception e){  System.out.println("HASTAAAA LA PROXIMAAAA");}
-                //TODO: Cambiar de ventana
+
             }
         }
     }

@@ -1,28 +1,24 @@
 package Aerotaxi.Core;
 
-import Aerotaxi.Airplanes.Aircraft;
+import Aerotaxi.Core.Airplanes.Aircraft;
 import Aerotaxi.Utilities.CustomDeserializer;
 import Aerotaxi.Utilities.CustomSerializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.lang.reflect.Type;
 import java.util.stream.Collectors;
 
 public class DataWarehouse {
     private static List<User> userList = new ArrayList<>();
     private static List<Aircraft> aircraftList = new ArrayList<>();
+    private static List<FlightTicket> flightList = new ArrayList<>();
     //private static List<> flights = new ArrayList<>();
     private static User loggedUser;
+    private static LocalDate currentDate; //para la fecha actual
 
 
     static { //Inicializador estatico
@@ -135,5 +131,15 @@ public class DataWarehouse {
     }
 
 
+    public static List<Aircraft> availablePlanes(LocalDate date){
+        List<FlightTicket> flightsThatDate = new ArrayList<>();
+        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(flightsThatDate::add); //Hago una lista con todos los vuelos de la fecha por parametro
+
+        List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //Asumo que todos los aviones estan disponibles
+        flightsThatDate.stream().forEach(x -> freePlanes.remove(x.getPlane())); //saco todos los aviones que estan en la lista de vuelos del dia
+
+
+        return freePlanes;
+    }
 
 }

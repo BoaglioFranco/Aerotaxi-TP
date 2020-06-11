@@ -16,6 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        System.out.println(City.getDistance(City.BUENOS_AIRES, City.MONTEVIDEO));
         music();
         Parent root = FXMLLoader.load(getClass().getResource("/Resources/sample.fxml"));
         primaryStage.setTitle("Aerotaxi - Fly with us");
@@ -32,8 +33,9 @@ public class Main extends Application {
 
     }
 
+
     public void music() {
-        String s = "/Resources/music.mp3";
+        String s = "src/Resources/music.mp3";
         Media h = new Media(Paths.get(s).toUri().toString());
         mediaPlayer = new MediaPlayer(h);
         mediaPlayer.play();
