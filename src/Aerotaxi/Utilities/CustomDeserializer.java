@@ -1,10 +1,11 @@
 package Aerotaxi.Utilities;
 
-import Aerotaxi.Airplanes.Aircraft;
-import Aerotaxi.Airplanes.Bronze;
-import Aerotaxi.Airplanes.Gold;
-import Aerotaxi.Airplanes.Silver;
+
 import Aerotaxi.Core.*;
+import Aerotaxi.Core.Airplanes.Aircraft;
+import Aerotaxi.Core.Airplanes.Bronze;
+import Aerotaxi.Core.Airplanes.Gold;
+import Aerotaxi.Core.Airplanes.Silver;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;

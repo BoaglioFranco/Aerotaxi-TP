@@ -1,10 +1,10 @@
 package Aerotaxi.Utilities;
 
-import Aerotaxi.Airplanes.Aircraft;
-import Aerotaxi.Airplanes.Bronze;
-import Aerotaxi.Airplanes.Gold;
-import Aerotaxi.Airplanes.Silver;
 import Aerotaxi.Core.Admin;
+import Aerotaxi.Core.Airplanes.Aircraft;
+import Aerotaxi.Core.Airplanes.Bronze;
+import Aerotaxi.Core.Airplanes.Gold;
+import Aerotaxi.Core.Airplanes.Silver;
 import Aerotaxi.Core.User;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

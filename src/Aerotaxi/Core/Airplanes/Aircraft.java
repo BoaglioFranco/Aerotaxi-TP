@@ -27,6 +27,6 @@ public abstract class Aircraft {
 
 }
 
-enum PropulsionType {
+enum  PropulsionType {
     MOTOR_PISTONES, MOTOR_REACCION, MOTOR_HELICE
 }
