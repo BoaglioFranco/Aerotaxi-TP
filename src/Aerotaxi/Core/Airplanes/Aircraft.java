@@ -2,7 +2,7 @@ package Aerotaxi.Core.Airplanes;
 
 import java.util.Objects;
 
-public abstract class Aircraft {
+public class Aircraft {
 
     private int fuelCapacity; //no sirve de nada
     private int costPerKm;
@@ -81,8 +81,4 @@ public abstract class Aircraft {
     public int hashCode() {
         return Objects.hash(fuelCapacity, costPerKm, capacity, speed, propulsionType, isA);
     }
-}
-
-enum  PropulsionType {
-    MOTOR_PISTONES, MOTOR_REACCION, MOTOR_HELICE
 }

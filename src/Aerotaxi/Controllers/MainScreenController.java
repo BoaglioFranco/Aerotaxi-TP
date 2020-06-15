@@ -4,6 +4,7 @@ import Aerotaxi.Core.Main;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -20,5 +21,6 @@ public class MainScreenController {
 
     @FXML
     public void orderFlightButton(ActionEvent actionEvent) {
+        Pane view = new SceneController().setScreen("");
     }
 }
