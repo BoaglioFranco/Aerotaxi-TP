@@ -5,6 +5,7 @@ import Aerotaxi.Core.Airplanes.Aircraft;
 import Aerotaxi.Core.Airplanes.Bronze;
 import Aerotaxi.Core.Airplanes.Gold;
 import Aerotaxi.Core.Airplanes.Silver;
+import Aerotaxi.Core.FlightTicket;
 import Aerotaxi.Core.User;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -27,6 +28,7 @@ public class CustomSerializer<T> implements JsonSerializer<ArrayList<T>> {
         map.put("Bronze", Bronze.class);
         map.put("Gold", Gold.class);
         map.put("Silver", Silver.class);
+        map.put("FlightTicket", FlightTicket.class);
     }
 
     @Override

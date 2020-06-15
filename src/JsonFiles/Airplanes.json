@@ -1,0 +1,25 @@
+[
+  {
+    "catering": true,
+    "wifi": true,
+    "fuelCapacity": 215,
+    "costPerKm": 370,
+    "capacity": 30,
+    "speed": 790,
+    "propulsionType": "MOTOR_REACCION",
+    "isA": "Gold",
+    "passengerFee": 2,
+    "classFee": 6000
+  },
+  {
+    "catering": true,
+    "fuelCapacity": 200,
+    "costPerKm": 367,
+    "capacity": 25,
+    "speed": 650,
+    "propulsionType": "MOTOR_PISTONES",
+    "isA": "Silver",
+    "passengerFee": 2,
+    "classFee": 4000
+  }
+]

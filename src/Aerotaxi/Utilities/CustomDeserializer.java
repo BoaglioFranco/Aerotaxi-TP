@@ -25,6 +25,7 @@ public class CustomDeserializer<T> implements JsonDeserializer<List<T>> {
         map.put("Bronze", Bronze.class);
         map.put("Gold", Gold.class);
         map.put("Silver", Silver.class);
+        map.put("FlightTicket", FlightTicket.class);
     }
 
     public List<T> deserialize(JsonElement json, Type typeOfT,

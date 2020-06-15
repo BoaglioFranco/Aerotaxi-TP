@@ -1,5 +1,9 @@
 package Aerotaxi.Utilities;
 
+import Aerotaxi.Core.Airplanes.Aircraft;
+import Aerotaxi.Core.Airplanes.Bronze;
+import Aerotaxi.Core.Airplanes.Gold;
+import Aerotaxi.Core.Airplanes.Silver;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ public class Main extends Application {
         primaryStage.setTitle("Aerotaxi - Fly with us");
         Scene scene = new Scene(root, 800, 600);
         //scene.getStylesheets().add("sample/sample.css");
+        primaryStage.getIcons().add(new Image("/Resources/Avion.png"));
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -36,7 +38,5 @@ public class Main extends Application {
         launch(args);
 
     }
-
-
 
 }

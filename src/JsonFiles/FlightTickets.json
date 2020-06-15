@@ -1,0 +1,37 @@
+[
+  {
+    "client": {
+      "username": "franco",
+      "password": "12345",
+      "name": "franco",
+      "surname": "b",
+      "age": 69,
+      "dni": "69420420",
+      "totalGastado": 0,
+      "isA": "User"
+    },
+    "plane": {
+      "catering": true,
+      "wifi": true,
+      "fuelCapacity": 215,
+      "costPerKm": 370,
+      "capacity": 30,
+      "speed": 790,
+      "propulsionType": "MOTOR_REACCION",
+      "isA": "Gold",
+      "passengerFee": 2,
+      "classFee": 6000
+    },
+    "date": {
+      "year": 2020,
+      "month": 8,
+      "day": 10
+    },
+    "origin": "BUENOS_AIRES",
+    "destination": "CORDOBA",
+    "cost": 2000,
+    "isA": "FlightTicket",
+    "isDone": false,
+    "isCancelled": false
+  }
+]

@@ -1,6 +1,6 @@
 package Aerotaxi.Core.Airplanes;
 
-public abstract class Aircraft {
+public class Aircraft {
 
     private int fuelCapacity; //no sirve de nada
     private int costPerKm;
@@ -27,6 +27,3 @@ public abstract class Aircraft {
 
 }
 
-enum  PropulsionType {
-    MOTOR_PISTONES, MOTOR_REACCION, MOTOR_HELICE
-}

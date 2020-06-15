@@ -12,6 +12,7 @@ public class FlightTicket {
     private City origin;
     private City destination;
     private int cost;
+    private String isA = "FlightTicket";
 
     boolean isDone;
     boolean isCancelled;
