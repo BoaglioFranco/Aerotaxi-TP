@@ -6,7 +6,7 @@ public class Gold extends Aircraft{
    private boolean wifi;
 
     public Gold(int fuelCapacity, int costPerKm, int capacity, int speed, PropulsionType propulsionType, int passengerFee, boolean wifi) {
-        super(fuelCapacity, costPerKm, capacity, speed, propulsionType, passengerFee);
+        super(fuelCapacity, costPerKm, capacity, speed, propulsionType);
         isA = "Gold";
         setClassFee(6000);
         catering = true;

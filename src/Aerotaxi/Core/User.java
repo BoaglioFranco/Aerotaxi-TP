@@ -9,19 +9,21 @@ public class User implements Serializable  {
 
     protected String username = "";
     protected String password = "";
+
     private String name = "";
     private String surname= "";
     private int age;
     private String dni = "";
-    private int totalGastado;
+
+    private int totalSpent;
+    private String bestClass = "";
 
     protected String isA;
 
 
-    //Mejor categoria de vuelo utilizado
-
     public User(){
-        totalGastado = 0;
+        totalSpent = 0;
+        isA = "User";
     }
 
     public User(String username, String password, String name, String surname, int age, String dni) {
@@ -31,7 +33,7 @@ public class User implements Serializable  {
         this.surname = surname;
         this.age = age;
         this.dni = dni;
-        totalGastado = 0;
+        totalSpent = 0;
         isA = "User";
     }
 
@@ -116,11 +118,21 @@ public class User implements Serializable  {
         return isValid;
     }
 
-    public int getTotalGastado() {
-        return totalGastado;
+    public int getTotalSpent() {
+        return totalSpent;
     }
 
+    public void setTotalSpent(int totalSpent){
+        this.totalSpent = totalSpent;
+    }
 
+    public String getBestClass() {
+        return bestClass;
+    }
+
+    public void setBestClass(String bestClass) {
+        this.bestClass = bestClass;
+    }
 
     @Override
     public boolean equals(Object o) {
