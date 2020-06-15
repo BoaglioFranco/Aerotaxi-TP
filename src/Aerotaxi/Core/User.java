@@ -23,6 +23,7 @@ public class User implements Serializable  {
 
     public User(){
         totalSpent = 0;
+        bestClass = "None";
         isA = "User";
     }
 
@@ -34,6 +35,7 @@ public class User implements Serializable  {
         this.age = age;
         this.dni = dni;
         totalSpent = 0;
+        bestClass = "None";
         isA = "User";
     }
 

@@ -64,6 +64,10 @@ public class Aircraft {
         this.propulsionType = propulsionType;
     }
 
+    public String getType() {
+        return isA;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
