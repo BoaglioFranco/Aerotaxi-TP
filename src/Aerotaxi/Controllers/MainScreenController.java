@@ -1,14 +1,9 @@
 package Aerotaxi.Controllers;
 
-import Aerotaxi.Core.Main;
-import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 
-import java.net.URL;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDrawer;
+import javafx.fxml.FXML;
 
 public class MainScreenController {
 
@@ -17,10 +12,9 @@ public class MainScreenController {
     private JFXButton flightButton;
 
     @FXML
-    private BorderPane mainPane;
+    private JFXButton atras;
 
     @FXML
-    public void orderFlightButton(ActionEvent actionEvent) {
-        Pane view = new SceneController().setScreen("");
-    }
+    private JFXDrawer drawer;
+
 }
