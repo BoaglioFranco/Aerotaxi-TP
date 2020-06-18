@@ -10,8 +10,8 @@ public class SceneController {
 
     public Pane setScreen(String fileName){
        try {
-           URL fileUrl = Aerotaxi.Core.Main.class.getResource("/Resources/"+ fileName +".fxml");
-
+           URL fileUrl = MainScreenController.class.getResource("/Resources/"+fileName+".fxml");
+           System.out.println(fileUrl);
            if(fileUrl == null){
               throw new java.io.FileNotFoundException("FXML file no't found");
            }

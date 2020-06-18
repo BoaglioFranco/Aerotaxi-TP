@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        music();
+        //music();
         Parent root = FXMLLoader.load(getClass().getResource("/Resources/sample.fxml"));
         primaryStage.setTitle("Aerotaxi - Fly with us");
         Scene scene = new Scene(root, 800, 600);
