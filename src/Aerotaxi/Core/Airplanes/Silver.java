@@ -1,17 +1,15 @@
 package Aerotaxi.Core.Airplanes;
 
-public class Silver extends Aircraft {
+public class Silver extends Aircraft implements Catering {
 
-    private boolean catering;
 
     public Silver(int fuelCapacity, int costPerKm, int capacity, int speed, PropulsionType propulsionType) {
         super(fuelCapacity, costPerKm, capacity, speed, propulsionType);
         setClassFee(4000);
-        catering = true;
         isA = "Silver";
     }
 
-    public boolean hasCatering(){
-        return  catering;
+    public String catering(){
+        return "Catering gourmet";
     }
 }

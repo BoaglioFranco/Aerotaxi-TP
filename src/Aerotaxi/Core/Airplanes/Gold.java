@@ -1,20 +1,18 @@
 package Aerotaxi.Core.Airplanes;
 
-public class Gold extends Aircraft{
+public class Gold extends Aircraft implements Catering{
 
-   private boolean catering;
    private boolean wifi;
 
     public Gold(int fuelCapacity, int costPerKm, int capacity, int speed, PropulsionType propulsionType, boolean wifi) {
         super(fuelCapacity, costPerKm, capacity, speed, propulsionType);
         isA = "Gold";
         setClassFee(6000);
-        catering = true;
         this.wifi = wifi;
     }
 
-    public boolean hasCatering(){
-        return catering;
+    public String catering(){
+        return "Catering gourmet";
     }
 
     public boolean hasWifi(){

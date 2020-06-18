@@ -10,6 +10,7 @@ public class FlightTicket {
     private User client;
     private Aircraft plane;
     private LocalDate date;
+    private int passengers;
     private City origin;
     private City destination;
     private int cost;
@@ -17,55 +18,50 @@ public class FlightTicket {
 
     boolean isDone;
 
-    public FlightTicket(User client, Aircraft plane, LocalDate date, City origin, City destination) {
+    public FlightTicket(User client, Aircraft plane, LocalDate date,int passengers, City origin, City destination) {
         this.client = client;
         this.plane = plane;
         this.date = date;
+        this.passengers = passengers;
         this.origin = origin;
         this.destination = destination;
 
+        setCost();
         isDone = false;
     }
 
-    public FlightTicket() {
-        isDone = false;
-    }
 
     public User getClient() {
         return client;
     }
 
-    public void setClient(User client) {
-        this.client = client;
-    }
 
     public Aircraft getPlane() {
         return plane;
     }
 
-    public void setPlane(Aircraft plane) {
-        this.plane = plane;
-    }
 
     public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
 
     public int getCost(){
         return cost;
     }
 
     private void setCost(){
+        cost = City.getDistance(origin, destination) * plane.getCostPerKm() + passengers * 3500 + plane.getClassFee();
+    }
 
+    public int getPassengers() {
+        return passengers;
     }
 
     public City getOrigin() {
         return origin;
     }
+
 
     public City getDestination() {
         return destination;
