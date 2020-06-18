@@ -14,7 +14,7 @@
          <children>
             <StackPane prefHeight="263.0" prefWidth="250.0" style="-fx-background-color: #7092be;">
                <children>
-                  <JFXButton fx:id="flightButton" prefHeight="354.0" prefWidth="380.0" />
+                  <JFXButton fx:id="flightButton" onAction="#orderFlight" prefHeight="354.0" prefWidth="380.0" />
                </children>
             </StackPane>
             <StackPane layoutX="10.0" layoutY="10.0" prefHeight="263.0" prefWidth="250.0" style="-fx-background-color: #7f7f7f;">
@@ -24,6 +24,6 @@
             </StackPane>
          </children>
       </VBox>
-      <JFXDrawer fx:id="drawer" layoutY="74.0" prefHeight="526.0" prefWidth="550.0" />
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="500.0" layoutY="74.0" prefHeight="526.0" prefWidth="550.0" />
    </children>
 </AnchorPane>
