@@ -3,11 +3,10 @@ package Aerotaxi.Core;
 import Aerotaxi.Core.Airplanes.Aircraft;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import static Aerotaxi.Utilities.JsonSaveLoad.fromJsonToList;
-import static Aerotaxi.Utilities.JsonSaveLoad.fromListToJson;
+
 
 
 public class DataWarehouse {
@@ -21,23 +20,14 @@ public class DataWarehouse {
 
     public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
 
-        boolean found;
-        try {
-            loggedUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
-                    .collect(Collectors.toList()).get(0); //Busca un user en la lista con respecto a lo que indico el usuario
-                    found = true;
-        }catch (Exception e){
-            found = false;
-        }
-        return found;
+        Optional<User> optionalUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
+                .findFirst(); //searching for the user...
+
+        optionalUser.ifPresent(user -> loggedUser = user);//If there is such user, it marks them as logged in.
+
+        return optionalUser.isPresent();
     }
 
-    public static void saveFiles(){
-        fromListToJson("src/JsonFiles/Users.json", userList);
-        fromListToJson("src/JsonFiles/Airplanes.json", aircraftList);
-        fromListToJson("src/JsonFiles/FlightTickets.json", flightList);
-
-    }
 
     public static boolean isUsernameTaken(String username){ //para registrarse
 
@@ -45,19 +35,23 @@ public class DataWarehouse {
     }
 
 
-    public static void addAndLogInUser(User user){
+    public static void addAndLogInUser(User user){//registration
         userList.add(user);
         loggedUser = user;
     }
 
+
+
+
+
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
-        List<FlightTicket> flightsThatDate = new ArrayList<>();
-        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(flightsThatDate::add); //Hago una lista con todos los vuelos de la fecha por parametro
+        List<Aircraft> busyPlanes = new ArrayList<>();
+        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(x -> busyPlanes.add(x.getPlane())); //Hago una lista con todos los vuelos de la fecha por parametro
 
-        List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //Asumo que todos los aviones estan disponibles
-        flightsThatDate.forEach(x -> freePlanes.remove(x.getPlane())); //saco todos los aviones que estan en la lista de vuelos del dia
+        List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //agrego todos los aviones a la lista
+        freePlanes.removeAll(busyPlanes);//remuevo todos los aviones que no estan ocupados
 
-        freePlanes.stream().filter(x -> x.getCapacity() >= passengers).forEach(freePlanes::remove); //filtro todos los aviones de menor capacidad
+        freePlanes = freePlanes.stream().filter(x -> x.getCapacity() >= passengers).collect(Collectors.toList()); //filtro todos los aviones de menor capacidad
 
         return freePlanes;
     }
@@ -87,10 +81,19 @@ public class DataWarehouse {
         flightList.add(flight);
     }
 
-    private static void updateBestClass(User user, String type){// TODO: este codigo va a ser una mierda
-        if(user.getBestClass().equals("None")){
-            user.setBestClass(type);
-        }
+
+
+    private static final Map<String, Integer> planeClassHierarchy = new HashMap<>();
+    static{
+        planeClassHierarchy.put("None", 0);
+        planeClassHierarchy.put("Bronze", 1);
+        planeClassHierarchy.put("Silver", 2);
+        planeClassHierarchy.put("Gold", 3);
+    }
+
+    private static void updateBestClass(User user, String newFlightType){
+        if(planeClassHierarchy.get(newFlightType) > planeClassHierarchy.get(user.getBestClass()))
+            user.setBestClass(newFlightType);
     }
 
 

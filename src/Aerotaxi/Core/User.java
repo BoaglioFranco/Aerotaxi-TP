@@ -45,7 +45,7 @@ public class User implements Serializable  {
     }
 
     public boolean setName(String name) {
-        boolean isValid = name.length() > 1 && name.length() < 21;
+        boolean isValid = name.matches("\\w+[\\w ]{4,20}");
         if(isValid)
             this.name = name;
         return isValid;
@@ -56,7 +56,7 @@ public class User implements Serializable  {
     }
 
     public boolean setSurname(String surname) {
-        boolean isValid = surname.length() > 1 && surname.length() < 21;
+        boolean isValid = surname.matches("\\w+[\\w ]{4,20}");
         if(isValid)
             this.surname = surname;
         return isValid;
@@ -69,7 +69,7 @@ public class User implements Serializable  {
     }
 
     public boolean setUsername(String username) {
-        boolean isValid = username.length() > 4 && username.length() < 21;
+        boolean isValid = username.matches("\\w{4,20}");
         if(isValid)
             this.username = username;
         return isValid;
@@ -80,7 +80,7 @@ public class User implements Serializable  {
     }
 
     public boolean setPassword(String password) {
-        boolean isValid = password.length() > 4 && password.length() < 21;
+        boolean isValid = password.matches("\\w{4,20}");
         if(isValid)
             this.password = password;
         return isValid;
