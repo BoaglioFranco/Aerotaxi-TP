@@ -50,13 +50,14 @@ public class DataWarehouse {
         loggedUser = user;
     }
 
-    public static List<Aircraft> availablePlanes(LocalDate date){
+    public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
         List<FlightTicket> flightsThatDate = new ArrayList<>();
         flightList.stream().filter(x -> x.getDate().equals(date)).forEach(flightsThatDate::add); //Hago una lista con todos los vuelos de la fecha por parametro
 
         List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //Asumo que todos los aviones estan disponibles
         flightsThatDate.forEach(x -> freePlanes.remove(x.getPlane())); //saco todos los aviones que estan en la lista de vuelos del dia
 
+        freePlanes.stream().filter(x -> x.getCapacity() >= passengers).forEach(freePlanes::remove); //filtro todos los aviones de menor capacidad
 
         return freePlanes;
     }
