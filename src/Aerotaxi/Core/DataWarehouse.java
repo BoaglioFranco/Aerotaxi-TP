@@ -39,6 +39,14 @@ public class DataWarehouse {
 
     }
 
+    public static User getLoggedUser() {
+        return loggedUser;
+    }
+
+    public static LocalDate getCurrentDate() {
+        return currentDate;
+    }
+
     public static boolean isUsernameTaken(String username){ //para registrarse
 
         return userList.stream().anyMatch(c -> username.equals(c.getUsername()));

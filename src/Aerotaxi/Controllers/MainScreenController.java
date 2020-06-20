@@ -1,14 +1,16 @@
 package Aerotaxi.Controllers;
 
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
+
 
 public class MainScreenController {
 
@@ -17,14 +19,15 @@ public class MainScreenController {
     private JFXButton flightButton;
 
     @FXML
-    private JFXButton atras;
-
-    @FXML
     private JFXDrawer drawer;
 
     @FXML
-    void orderFlight(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/Resources/Screen1.fxml"));
+    private BorderPane mainPane;
+
+
+    @FXML
+    void orderFlightScreen(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/Resources/flightSearch.fxml"));
         drawer.setSidePane(pane);
         if(drawer.isOpened()){
             drawer.close();
@@ -33,7 +36,15 @@ public class MainScreenController {
             drawer.open();
 
     }
+    /*
+        f object = new f();
+        Pane view = object.paneview("/Resources/flightSearch.fxml");
+        mainPane.setCenter(view);
 
-
-
+     */
 }
+
+
+
+
+

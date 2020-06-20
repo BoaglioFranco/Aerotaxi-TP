@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="526.0" prefWidth="520.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Airplane.Controller.ChoosePlaneController">
+   <children>
+      <JFXListView fx:id="Selector" layoutX="22.0" layoutY="67.0" onMouseClicked="#test" prefHeight="339.0" prefWidth="200.0" />
+      <JFXButton fx:id="confirmFlight" layoutX="41.0" layoutY="457.0" prefHeight="42.0" prefWidth="438.0" style="-fx-background-color: #5BC500;" text="Button" />
+      <Label layoutX="266.0" layoutY="67.0" prefHeight="57.0" prefWidth="200.0" text="INFO" />
+      <Label layoutX="266.0" layoutY="124.0" prefHeight="57.0" prefWidth="200.0" text="INFO" />
+      <Label layoutX="266.0" layoutY="181.0" prefHeight="57.0" prefWidth="200.0" text="INFO" />
+      <Label layoutX="266.0" layoutY="238.0" prefHeight="57.0" prefWidth="200.0" text="INFO" />
+      <Label layoutX="266.0" layoutY="295.0" prefHeight="57.0" prefWidth="200.0" text="INFO" />
+   </children>
+</AnchorPane>
