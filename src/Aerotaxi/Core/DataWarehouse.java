@@ -18,6 +18,19 @@ public class DataWarehouse {
     private static User loggedUser;
     private static LocalDate  currentDate = LocalDate.now();
 
+    static { //actualiza los vuelos para marcar los que ya sucedieron como hechos
+        flightList.stream().filter(x -> x.getDate().isBefore(currentDate)).forEach(FlightTicket::markAsDone);
+    }
+
+
+    public static User getLoggedUser(){
+        return loggedUser;
+    }
+
+    public static LocalDate getCurrentDate(){
+        return currentDate;
+    }
+
     public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
 
         Optional<User> optionalUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))

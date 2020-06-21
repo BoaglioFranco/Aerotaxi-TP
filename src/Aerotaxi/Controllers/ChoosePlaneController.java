@@ -36,6 +36,9 @@ public class ChoosePlaneController implements Initializable {
 
 
     @FXML
+    private AnchorPane daddyPane;
+
+    @FXML
     private JFXTreeTableView<TableItem> treeView;
 
     private ObservableList<TableItem> dataTable;
@@ -184,7 +187,7 @@ public class ChoosePlaneController implements Initializable {
         StaticController.userSelectedFlight = treeView.getSelectionModel().getSelectedItem().getValue().flight;
 
         AnchorPane confirmFlight = FXMLLoader.load(getClass().getResource("/Resources/confirmFlight.fxml"));
-        //pane.getChildren().setAll(confirmFlight);
+        daddyPane.getChildren().setAll(confirmFlight);
 
     }
 
