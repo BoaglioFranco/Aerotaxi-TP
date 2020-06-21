@@ -89,7 +89,6 @@ public class RegisterScreenController implements Initializable {
 
     ///TODO : MEJORAR ESTE CODIGO A ALMO MAS LEGIBLE
     public void gotoPrincipalScreen(ActionEvent actionEvent) throws IOException { //codigo para cambiar la escena a la de login
-
         Parent root2 = FXMLLoader.load(getClass().getResource("/Resources/sample.fxml"));
         Scene scene2 = new Scene(root2);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

@@ -1,6 +1,9 @@
 package Aerotaxi.Core;
 
-import Aerotaxi.Core.Airplanes.Aircraft;
+import Aerotaxi.Core.Airplanes.*;
+import Aerotaxi.Core.Airplanes.Bronze;
+import Aerotaxi.Core.Airplanes.PropulsionType;
+import Aerotaxi.Core.Airplanes.Silver;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,11 +16,27 @@ import static Aerotaxi.Utilities.JsonSaveLoad.fromListToJson;
 public class DataWarehouse {
 
     private static List<User> userList = fromJsonToList("src/JsonFiles/Users.json");
-    private static List<Aircraft> aircraftList = fromJsonToList("src/JsonFiles/Airplanes.json");
+    private static List<Aircraft> aircraftList =  fromJsonToList("src/JsonFiles/Airplanes.json");
     private static List<FlightTicket> flightList = fromJsonToList("src/JsonFiles/FlightTickets.json");
 
     private static User loggedUser;
     private static LocalDate  currentDate = LocalDate.now();
+
+    /*
+    public static void Hardcode(){
+        Bronze bronce = new Bronze(2500,12,5,220, PropulsionType.MOTOR_HELICE);
+        Silver silver = new Silver(3000,15,8,290,PropulsionType.MOTOR_PISTONES);
+        Gold gold = new Gold(4500,25,12,350,PropulsionType.MOTOR_REACCION,true);
+
+        aircraftList.add(bronce);
+        aircraftList.add(silver);
+        aircraftList.add(gold);
+
+        fromListToJson("src/JsonFiles/Airplanes.json", aircraftList);
+
+    }
+
+     */
 
     public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
 
@@ -59,13 +78,13 @@ public class DataWarehouse {
     }
 
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
-        List<FlightTicket> flightsThatDate = new ArrayList<>();
-        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(flightsThatDate::add); //Hago una lista con todos los vuelos de la fecha por parametro
+        List<Aircraft> busyPlanes = new ArrayList<>();
+        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(x -> busyPlanes.add(x.getPlane())); //Hago una lista con todos los vuelos de la fecha por parametro
 
-        List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //Asumo que todos los aviones estan disponibles
-        flightsThatDate.forEach(x -> freePlanes.remove(x.getPlane())); //saco todos los aviones que estan en la lista de vuelos del dia
+        List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //agrego todos los aviones a la lista
+        freePlanes.removeAll(busyPlanes);//remuevo todos los aviones que no estan ocupados
 
-        freePlanes.stream().filter(x -> x.getCapacity() >= passengers).forEach(freePlanes::remove); //filtro todos los aviones de menor capacidad
+        freePlanes = freePlanes.stream().filter(x -> x.getCapacity() >= passengers).collect(Collectors.toList()); //filtro todos los aviones de menor capacidad
 
         return freePlanes;
     }

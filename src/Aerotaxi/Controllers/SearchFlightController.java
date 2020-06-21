@@ -9,12 +9,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class SearchFlightController implements Initializable {
@@ -37,8 +39,6 @@ public class SearchFlightController implements Initializable {
 
     @FXML
     private Label errorLabel;
-
-
 
 
 
@@ -92,14 +92,17 @@ public class SearchFlightController implements Initializable {
 
         if(isValid){
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Resources/choosePlane.fxml"));
+            Parent root = loader.load();
+            ChoosePlaneController secController = loader.getController();
+            int pass = Integer.parseInt(passengers.getText());
+
+            secController.loadData(pass,departure.getValue(),origin.getValue(),destination.getValue());
+
+
             AnchorPane pane2 = FXMLLoader.load(getClass().getResource("/Resources/choosePlane.fxml"));
             pane.getChildren().setAll(pane2);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Resources/choosePlane.fxml"));
-            Parent root = (Parent) loader.load();
-            ChoosePlaneController secController = loader.getController();
-
-            //secController.myFunction();
 
 
         }
