@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="520.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="526.0" prefWidth="520.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.confirmFlightController">
     <children>
         <JFXButton fx:id="confirmFlight" layoutX="40.0" layoutY="463.0" onAction="#ConfirmOrder" prefHeight="50.0" prefWidth="442.0" style="-fx-background-color: #5BC500;" text="Confirmar vuelo" />
-        <JFXTreeTableView fx:id="treeView" layoutX="14.0" layoutY="55.0" prefHeight="391.0" prefWidth="491.0" />
-        <Label layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="491.0" text="Tu vuelo es " />
+        <Label alignment="CENTER" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="491.0" style="-fx-background-color: #d0d5d6;" text="Detalles de su orden: " textFill="#001a07">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="15.0" layoutY="83.0" />
+      <HBox layoutX="32.0" layoutY="72.0" prefHeight="258.0" prefWidth="450.0" spacing="95.0" style="-fx-background-color: #bac1c2; -fx-border-color: #717475;">
+         <children>
+            <VBox prefHeight="258.0" prefWidth="126.0" spacing="30.0">
+               <children>
+                  <Label text="Origen:" />
+                  <Label text="Destino:" />
+                  <Label text="Fecha:" />
+                  <Label text="Nro pasajeros:" />
+                  <Label text="Clase:" />
+                  <Label text="Costo total:" />
+               </children>
+            </VBox>
+            <VBox prefHeight="70.0" prefWidth="100.0" spacing="30.0">
+               <children>
+                  <Label fx:id="originLabel" />
+                  <Label fx:id="destinationLabel" />
+                  <Label fx:id="dateLabel" />
+                  <Label fx:id="passengersLabel" />
+                  <Label fx:id="classLabel" />
+                  <Label fx:id="costLabel" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
     </children>
 </AnchorPane>
