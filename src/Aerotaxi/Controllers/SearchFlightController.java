@@ -93,12 +93,9 @@ public class SearchFlightController implements Initializable {
         if(isValid){
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Resources/choosePlane.fxml"));
-            Parent root = loader.load();
-            ChoosePlaneController secController = loader.getController();
             int pass = Integer.parseInt(passengers.getText());
 
-            secController.loadData(pass,departure.getValue(),origin.getValue(),destination.getValue());
-
+            StaticController.loadData(pass,departure.getValue(),origin.getValue(),destination.getValue());
 
             AnchorPane pane2 = FXMLLoader.load(getClass().getResource("/Resources/choosePlane.fxml"));
             pane.getChildren().setAll(pane2);
