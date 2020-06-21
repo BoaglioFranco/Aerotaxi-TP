@@ -40,7 +40,7 @@
             </StackPane>
             <StackPane layoutX="10.0" layoutY="10.0" prefHeight="263.0" prefWidth="250.0" style="-fx-background-color: #7f7f7f;">
                <children>
-                  <JFXButton fx:id="atras" prefHeight="342.0" prefWidth="357.0" text=" " />
+                  <JFXButton fx:id="userInfoButton" onAction="#toFlightManagement" prefHeight="342.0" prefWidth="357.0" text=" " />
                   <ImageView>
                      <image>
                         <Image url="@Images/icons8-ticket.png" />

@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 import static Aerotaxi.Utilities.JsonSaveLoad.fromJsonToList;
-
+import static Aerotaxi.Utilities.JsonSaveLoad.fromListToJson;
 
 
 public class DataWarehouse {
@@ -40,9 +40,13 @@ public class DataWarehouse {
         loggedUser = user;
     }
 
+    public static User getLoggedUser(){
+        return loggedUser;
+    }
 
-
-
+    public static LocalDate getCurrentDate(){
+        return currentDate;
+    }
 
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
         List<Aircraft> busyPlanes = new ArrayList<>();
@@ -56,6 +60,11 @@ public class DataWarehouse {
         return freePlanes;
     }
 
+    public static void saveFiles(){
+        fromListToJson("src/JsonFiles/Users.json", userList);
+        fromListToJson("src/JsonFiles/Airplanes.json", aircraftList);
+        fromListToJson("src/JsonFiles/FlightTickets.json", flightList);
+    }
 
     public static List<FlightTicket> getUserFlights(){
         return flightList.stream().filter(x -> x.getClient().equals(loggedUser)).collect(Collectors.toList());

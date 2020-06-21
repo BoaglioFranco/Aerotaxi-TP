@@ -6,7 +6,8 @@
     "surname": "b",
     "age": 69,
     "dni": "69420420",
-    "totalGastado": 0,
+    "totalSpent": 0,
+    "bestClass": "None",
     "isA": "User"
   },
   {
@@ -16,7 +17,8 @@
     "surname": "b",
     "age": 69,
     "dni": "69699996",
-    "totalGastado": 0,
+    "totalSpent": 0,
+    "bestClass": "None",
     "isA": "User"
   },
   {
@@ -26,7 +28,18 @@
     "surname": "",
     "age": 0,
     "dni": "",
-    "totalGastado": 0,
+    "totalSpent": 0,
     "isA": "Admin"
+  },
+  {
+    "username": "facu201",
+    "password": "jej0x",
+    "name": "facundo",
+    "surname": "montebro",
+    "age": 21,
+    "dni": "41.333.208",
+    "totalSpent": 0,
+    "bestClass": "None",
+    "isA": "User"
   }
 ]

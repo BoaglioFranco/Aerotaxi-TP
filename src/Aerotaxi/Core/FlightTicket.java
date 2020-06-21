@@ -62,7 +62,6 @@ public class FlightTicket {
         return origin;
     }
 
-
     public City getDestination() {
         return destination;
     }
