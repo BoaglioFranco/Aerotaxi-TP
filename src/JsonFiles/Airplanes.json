@@ -1,6 +1,6 @@
 [
   {
-    "fuelCapacity": 2500,
+    "fuelTank": 0,
     "costPerKm": 12,
     "capacity": 5,
     "speed": 220,
@@ -9,7 +9,7 @@
     "isA": "Bronze"
   },
   {
-    "fuelCapacity": 3000,
+    "fuelTank": 0,
     "costPerKm": 15,
     "capacity": 8,
     "speed": 290,
@@ -19,7 +19,7 @@
   },
   {
     "wifi": true,
-    "fuelCapacity": 4500,
+    "fuelTank": 0,
     "costPerKm": 25,
     "capacity": 12,
     "speed": 350,

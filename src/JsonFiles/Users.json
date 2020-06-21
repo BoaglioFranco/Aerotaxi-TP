@@ -6,7 +6,8 @@
     "surname": "b",
     "age": 69,
     "dni": "69420420",
-    "totalGastado": 0,
+    "totalSpent": 0,
+    "bestClass": "None",
     "isA": "User"
   },
   {
@@ -16,7 +17,8 @@
     "surname": "b",
     "age": 69,
     "dni": "69699996",
-    "totalGastado": 0,
+    "totalSpent": 0,
+    "bestClass": "None",
     "isA": "User"
   },
   {
@@ -26,7 +28,29 @@
     "surname": "",
     "age": 0,
     "dni": "",
-    "totalGastado": 0,
+    "totalSpent": 0,
     "isA": "Admin"
+  },
+  {
+    "username": "facundo201",
+    "password": "pepepepe",
+    "name": "Facuuu",
+    "surname": "monte",
+    "age": 0,
+    "dni": "12.222.222",
+    "totalSpent": 0,
+    "bestClass": "None",
+    "isA": "User"
+  },
+  {
+    "username": "Juancho",
+    "password": "Jgonz69",
+    "name": "Juan Cruz",
+    "surname": "Gonzalez",
+    "age": 35,
+    "dni": "22.553.125",
+    "totalSpent": 19100,
+    "bestClass": "Bronze",
+    "isA": "User"
   }
 ]

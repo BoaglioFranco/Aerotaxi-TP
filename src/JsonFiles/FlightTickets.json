@@ -7,31 +7,62 @@
       "surname": "b",
       "age": 69,
       "dni": "69420420",
-      "totalGastado": 0,
+      "totalSpent": 0,
+      "bestClass": "None",
       "isA": "User"
     },
     "plane": {
-      "catering": true,
-      "wifi": true,
-      "fuelCapacity": 215,
+      "fuelTank": 0,
       "costPerKm": 370,
       "capacity": 30,
       "speed": 790,
       "propulsionType": "MOTOR_REACCION",
-      "isA": "Gold",
-      "passengerFee": 2,
-      "classFee": 6000
+      "classFee": 6000,
+      "isA": "Gold"
     },
     "date": {
       "year": 2020,
       "month": 8,
       "day": 10
     },
+    "passengers": 0,
     "origin": "BUENOS_AIRES",
     "destination": "CORDOBA",
     "cost": 2000,
     "isA": "FlightTicket",
-    "isDone": false,
-    "isCancelled": false
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "Juancho",
+      "password": "Jgonz69",
+      "name": "Juan Cruz",
+      "surname": "Gonzalez",
+      "age": 35,
+      "dni": "22.553.125",
+      "totalSpent": 19100,
+      "bestClass": "Bronze",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 0,
+      "costPerKm": 12,
+      "capacity": 5,
+      "speed": 220,
+      "propulsionType": "MOTOR_HELICE",
+      "classFee": 3000,
+      "isA": "Bronze"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 21
+    },
+    "passengers": 1,
+    "origin": "CORDOBA",
+    "destination": "SANTIAGO",
+    "cost": 19100,
+    "isA": "FlightTicket",
+    "isDone": false
   }
 ]

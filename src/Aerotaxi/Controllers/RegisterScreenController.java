@@ -71,7 +71,6 @@ public class RegisterScreenController implements Initializable {
 
     @FXML
     void registerUser(ActionEvent event) {
-        User us = new User();
         if(DataWarehouse.isUsernameTaken(userField.getText())){
             errorLabel.setText("El nombre de usuario no esta disponible");
         } else{
@@ -121,13 +120,11 @@ public class RegisterScreenController implements Initializable {
             errorLabel.setText("Apellido Invalido");
         } else if(!us.setDni(dniField.getText())){
             errorLabel.setText("Dni invalido");
-        } else{
-            try{
-                Integer.parseInt(ageField.getText());
-            } catch (Exception e){
-                errorLabel.setText("Edad invalida");
-                return false;
-            }
+        } else if(!ageField.getText().matches("\\d{2}")){
+            errorLabel.setText("Edad invalida");
+        }
+        else{
+            us.setAge(Integer.parseInt(ageField.getText()));
             result = true;
         }
         return  result;

@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 import static Aerotaxi.Utilities.JsonSaveLoad.fromJsonToList;
-
+import static Aerotaxi.Utilities.JsonSaveLoad.fromListToJson;
 
 
 public class DataWarehouse {
@@ -29,6 +29,13 @@ public class DataWarehouse {
 
     public static LocalDate getCurrentDate(){
         return currentDate;
+    }
+
+
+    public static void saveFiles(){
+        fromListToJson("src/JsonFiles/Users.json", userList);
+        fromListToJson("src/JsonFiles/Airplanes.json", aircraftList);
+        fromListToJson("src/JsonFiles/FlightTickets.json", flightList);
     }
 
     public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario

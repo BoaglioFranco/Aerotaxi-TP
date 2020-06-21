@@ -48,9 +48,9 @@ public class confirmFlightController implements Initializable {
     }
 
     @FXML
-    void ConfirmOrder(ActionEvent event) {
-        confirmButton.setDisable(true);
-        confirmationLabel.setText("Su vuelo ha sido registrado, gracias por elegirnos.");
+    public void confirmOrder(ActionEvent event) {
+       confirmButton.setDisable(true);
+        confirmationLabel.setText("Su vuelo ha sido registrado correctamente");
         DataWarehouse.addFlight(StaticController.userSelectedFlight);
     }
 
