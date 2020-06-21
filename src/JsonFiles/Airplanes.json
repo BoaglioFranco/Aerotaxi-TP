@@ -1,25 +1,30 @@
 [
   {
-    "catering": true,
-    "wifi": true,
-    "fuelCapacity": 215,
-    "costPerKm": 370,
-    "capacity": 30,
-    "speed": 790,
-    "propulsionType": "MOTOR_REACCION",
-    "isA": "Gold",
-    "passengerFee": 2,
-    "classFee": 6000
+    "fuelCapacity": 2500,
+    "costPerKm": 12,
+    "capacity": 5,
+    "speed": 220,
+    "propulsionType": "MOTOR_HELICE",
+    "classFee": 3000,
+    "isA": "Bronze"
   },
   {
-    "catering": true,
-    "fuelCapacity": 200,
-    "costPerKm": 367,
-    "capacity": 25,
-    "speed": 650,
+    "fuelCapacity": 3000,
+    "costPerKm": 15,
+    "capacity": 8,
+    "speed": 290,
     "propulsionType": "MOTOR_PISTONES",
-    "isA": "Silver",
-    "passengerFee": 2,
-    "classFee": 4000
+    "classFee": 4000,
+    "isA": "Silver"
+  },
+  {
+    "wifi": true,
+    "fuelCapacity": 4500,
+    "costPerKm": 25,
+    "capacity": 12,
+    "speed": 350,
+    "propulsionType": "MOTOR_REACCION",
+    "classFee": 6000,
+    "isA": "Gold"
   }
 ]

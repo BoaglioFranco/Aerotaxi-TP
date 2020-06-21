@@ -19,7 +19,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="50.0" layoutY="178.0">
                <image>
-                  <Image url="@logo.png" />
+                  <Image url="@Images/logo.png" />
                </image>
             </ImageView>
          </children>

@@ -1,5 +1,6 @@
 package Aerotaxi.Core;
 
+import Aerotaxi.Controllers.MainScreenController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,10 +22,11 @@ public class Main extends Application {
         primaryStage.setTitle("Aerotaxi - Fly with us");
         Scene scene = new Scene(root, 800, 600);
         //scene.getStylesheets().add("sample/sample.css");
-        primaryStage.getIcons().add(new Image("/Resources/Avion.png"));
+        primaryStage.getIcons().add(new Image("/Resources/Images/Avion.png"));
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+
 
     }
     MediaPlayer mediaPlayer;

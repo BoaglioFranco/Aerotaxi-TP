@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="526.0" prefWidth="550.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.SearchFlightController">
+   <children>
+      <JFXButton fx:id="searchButton" layoutX="35.0" layoutY="454.0" onAction="#searchFlight" prefHeight="46.0" prefWidth="470.0" style="-fx-background-color: #5BC500;" text="Buscar Vuelo" />
+      <HBox layoutX="22.0" layoutY="46.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <image>
+                  <Image url="@Images/grupo.png" />
+               </image>
+            </ImageView>
+            <Label text="N° Pasajeros">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="passengers" prefHeight="25.0" prefWidth="38.0" promptText="    N°">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></JFXTextField>
+         </children>
+      </HBox>
+      <HBox layoutX="13.0" layoutY="119.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <image>
+                  <Image url="@Images/ubicacion.png" />
+               </image>
+            </ImageView>
+            <Label text="Origen">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="origin" prefHeight="25.0" prefWidth="121.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="195.0" spacing="5.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <image>
+                  <Image url="@Images/destino.png" />
+               </image>
+            </ImageView>
+            <Label text="Destino">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="destination" prefHeight="25.0" prefWidth="121.0" />
+         </children>
+      </HBox>
+      <JFXDatePicker fx:id="departure" defaultColor="BLACK" editable="false" layoutX="34.0" layoutY="284.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="253.0" promptText="                 Dia de Salida" />
+      <Label fx:id="errorLabel" layoutX="35.0" layoutY="374.0" prefHeight="73.0" prefWidth="354.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label fx:id="infoLabel" layoutX="326.0" layoutY="217.0" prefHeight="134.0" prefWidth="202.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="441.0" layoutY="22.0">
+         <image>
+            <Image url="@Images/enviar.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

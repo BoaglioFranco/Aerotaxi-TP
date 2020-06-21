@@ -54,11 +54,12 @@ public class Controller {
 
     public void verifyLogin(ActionEvent event){
 
-
         if(DataWarehouse.validateUser(usernameInput.getText(), passwordInput.getText())){
             try {
                 goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
-            }catch (Exception e){  System.out.println("HASTAAAA LA PROXIMAAAA");}
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
         else{
             errorLabel.setText("Nombre de usuario o contraseña incorrectos");
