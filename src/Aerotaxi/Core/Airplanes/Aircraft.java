@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Aircraft {
 
-    private int fuelCapacity; //no sirve de nada
+    private int fuelTank; //no sirve de nada
     private int costPerKm;
     private int capacity;
     private int speed;
@@ -12,8 +12,8 @@ public class Aircraft {
     private int classFee;
     protected String isA = "Aircraft"; //gson stuff
 
-    public Aircraft(int fuelCapacity, int costPerKm, int capacity, int speed, PropulsionType propulsionType) {
-        this.fuelCapacity = fuelCapacity;
+    public Aircraft(int fuelTank, int costPerKm, int capacity, int speed, PropulsionType propulsionType) {
+        this.fuelTank = fuelTank;
         this.costPerKm = costPerKm;
         this.capacity = capacity;
         this.speed = speed;
@@ -24,12 +24,12 @@ public class Aircraft {
     protected void setClassFee(int fee){this.classFee = fee;}
     public int getClassFee(){ return classFee;}
 
-    public int getFuelCapacity() {
-        return fuelCapacity;
+    public int getFuelTank() {
+        return fuelTank;
     }
 
-    public void setFuelCapacity(int fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
+    public void setFuelTank(int fuelTank) {
+        this.fuelTank = fuelTank;
     }
 
     public int getCostPerKm() {
@@ -52,17 +52,10 @@ public class Aircraft {
         return speed;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
     public PropulsionType getPropulsionType() {
         return propulsionType;
     }
 
-    public void setPropulsionType(PropulsionType propulsionType) {
-        this.propulsionType = propulsionType;
-    }
 
     public String getType() {
         return isA;
@@ -73,16 +66,16 @@ public class Aircraft {
         if (this == o) return true;
         if (!(o instanceof Aircraft)) return false;
         Aircraft aircraft = (Aircraft) o;
-        return fuelCapacity == aircraft.fuelCapacity &&
-                costPerKm == aircraft.costPerKm &&
+        return fuelTank == aircraft.fuelTank &&
                 capacity == aircraft.capacity &&
                 speed == aircraft.speed &&
+                classFee == aircraft.classFee &&
                 propulsionType == aircraft.propulsionType &&
-                Objects.equals(isA, aircraft.isA);
+                isA.equals(aircraft.isA);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fuelCapacity, costPerKm, capacity, speed, propulsionType, isA);
+        return Objects.hash(fuelTank, capacity, speed, propulsionType, classFee, isA);
     }
 }
