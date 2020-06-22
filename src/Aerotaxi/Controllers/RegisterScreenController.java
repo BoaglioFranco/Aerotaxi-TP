@@ -87,14 +87,12 @@ public class RegisterScreenController implements Initializable {
     }
 
 
-    ///TODO : MEJORAR ESTE CODIGO A ALMO MAS LEGIBLE
-    public void gotoPrincipalScreen(ActionEvent actionEvent) throws IOException { //codigo para cambiar la escena a la de login
-        Parent root2 = FXMLLoader.load(getClass().getResource("/Resources/sample.fxml"));
-        Scene scene2 = new Scene(root2);
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(scene2);
-        window.setTitle("Aerotaxi");
-        window.show();
+    public void gotoPrincipalScreen(ActionEvent actionEvent){
+        try {
+            goToScreen(actionEvent, "/Resources/login.fxml", "Aerotaxi");
+        }catch (Exception e) {
+            System.out.println("Hasta la proximaaaaaaa");
+        }
     }
 
 
@@ -114,7 +112,7 @@ public class RegisterScreenController implements Initializable {
         if(!us.setUsername(userField.getText())){
             errorLabel.setText("Nombre de usuario invalido");
         } else if(!us.setPassword(passField.getText())){ //Valido 1 por uno los campos que ingreso el usuario
-            errorLabel.setText("Contraseña invalida");   //no se si es el codigo mas lindo que hay
+            errorLabel.setText("Contraseña invalida");
         } else if(!us.setName(nameField.getText())){
             errorLabel.setText("Nombre Invalido");
         } else if(!us.setSurname(surnameField.getText())){

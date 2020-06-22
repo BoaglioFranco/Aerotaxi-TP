@@ -25,6 +25,16 @@
             <JFXTextField fx:id="userField" />
          </children>
       </HBox>
+      <HBox layoutX="31.0" layoutY="182.0" spacing="10.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="129.0" text="Contraseña">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="passField" />
+         </children>
+      </HBox>
       <HBox layoutX="23.0" layoutY="338.0" spacing="10.0">
          <children>
             <Label prefHeight="25.0" prefWidth="54.0" text="Nombre">
@@ -45,6 +55,16 @@
             <JFXTextField fx:id="surnameField" />
          </children>
       </HBox>
+      <HBox layoutX="25.0" layoutY="443.0" spacing="10.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="51.0" text="DNI">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="13.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="dniField" />
+         </children>
+      </HBox>
       <HBox layoutX="26.0" layoutY="492.0" spacing="25.0">
          <children>
             <Label prefHeight="28.0" prefWidth="33.0" text="Edad">
@@ -53,16 +73,6 @@
                </font>
             </Label>
             <JFXTextField fx:id="ageField" />
-         </children>
-      </HBox>
-      <HBox layoutX="31.0" layoutY="182.0" spacing="10.0">
-         <children>
-            <Label prefHeight="25.0" prefWidth="129.0" text="Contraseña">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="15.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="passField" />
          </children>
       </HBox>
       <Label layoutX="17.0" layoutY="277.0" prefHeight="17.0" prefWidth="156.0" text="Datos Personales">
@@ -80,16 +90,6 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-      <HBox layoutX="25.0" layoutY="443.0" spacing="10.0">
-         <children>
-            <Label prefHeight="26.0" prefWidth="51.0" text="DNI">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="13.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="dniField" />
-         </children>
-      </HBox>
       <Label layoutX="322.0" layoutY="138.0" text="Entre 5 y 20 caracteres" />
       <Label layoutX="322.0" layoutY="199.0" text="Entre 5 y 20 caracteres" />
       <HBox alignment="CENTER" layoutY="-6.0" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #4C516D;">
@@ -101,5 +101,10 @@
             </Label>
          </children>
       </HBox>
+      <Label fx:id="errorLabel" layoutX="139.0" layoutY="554.0" prefHeight="32.0" prefWidth="415.0" textFill="#f80505">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
