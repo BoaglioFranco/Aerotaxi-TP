@@ -6,7 +6,7 @@
     "surname": "b",
     "age": 69,
     "dni": "69420420",
-    "totalSpent": -418400,
+    "totalSpent": -443000,
     "bestClass": "Gold",
     "isA": "User"
   },
@@ -40,6 +40,6 @@
     "dni": "41.333.208",
     "totalSpent": 0,
     "bestClass": "Gold",
-    "isA": "User"
+    "isA": "Admin"
   }
 ]

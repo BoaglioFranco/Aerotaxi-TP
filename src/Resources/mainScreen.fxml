@@ -43,7 +43,7 @@
                   <JFXButton fx:id="userInfoButton" onAction="#toFlightManagement" prefHeight="342.0" prefWidth="357.0" text=" " />
                   <ImageView>
                      <image>
-                        <Image url="@Images/icons8-ticket.png" />
+                        <Image url="@Images/ticket.png" />
                      </image>
                   </ImageView>
                </children>

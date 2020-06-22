@@ -31,6 +31,10 @@ public class Main extends Application {
 
     }
 
+    public void closeProgram(){
+        DataWarehouse.saveFiles();
+    }
+
 
     MediaPlayer mediaPlayer;
     public void music(){

@@ -3,6 +3,7 @@ package Aerotaxi.Controllers;
 import Aerotaxi.Core.DataWarehouse;
 import Aerotaxi.Core.FlightTicket;
 import Aerotaxi.Core.User;
+import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
@@ -11,35 +12,35 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.util.Callback;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 public class AdminController implements Initializable {
 
-    @FXML
-    private TabPane tabPane;
 
-    @FXML
-    private Tab tabUser;
 
     @FXML
     private JFXTreeTableView<ItemUser> userTableView;
 
     @FXML
     private JFXTreeTableView<ItemFlights> flightsTableView;
+
+    @FXML
+    private DatePicker datePicker;
+
+    @FXML
+    private JFXTextField textField;
 
     private ObservableList<ItemUser> obsUserList;
 
@@ -100,6 +101,7 @@ public class AdminController implements Initializable {
         });
 
         ///// Columnas vuelos.
+
         JFXTreeTableColumn<ItemFlights, String> colDate = new JFXTreeTableColumn<ItemFlights, String>("Fecha");
         colDate.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<ItemFlights, String>, ObservableValue<String>>() {
             @Override
@@ -132,7 +134,6 @@ public class AdminController implements Initializable {
             }
         });
 
-        FilteredList<> a;
 
         final TreeItem userTreeRoot = new RecursiveTreeItem<ItemUser>(obsUserList, RecursiveTreeObject::getChildren);
         final TreeItem flightsTreeRoot = new RecursiveTreeItem<ItemFlights>(obsFlightsList, RecursiveTreeObject::getChildren);
@@ -145,6 +146,19 @@ public class AdminController implements Initializable {
 
         userTableView.setRoot(userTreeRoot);
         flightsTableView.setRoot(flightsTreeRoot);
+
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                flightsTableView.setPredicate(new Predicate<TreeItem<ItemFlights>>() {
+                    @Override
+                    public boolean test(TreeItem<ItemFlights> itemFlightsTreeItem) {
+                        boolean flag = itemFlightsTreeItem.getValue().date.getValue().contains(t1);
+                        return flag;
+                    }
+                });
+            }
+        });
 
     }
 
@@ -161,8 +175,7 @@ public class AdminController implements Initializable {
     }
 
     public void searchDateFlights(ActionEvent actionEvent) {
-
-
+        textField.setText(datePicker.getValue().toString());
     }
 
     class ItemUser extends RecursiveTreeObject<ItemUser> {
@@ -209,7 +222,6 @@ public class AdminController implements Initializable {
 
             ticket = A;
         }
-
 
     }
 
