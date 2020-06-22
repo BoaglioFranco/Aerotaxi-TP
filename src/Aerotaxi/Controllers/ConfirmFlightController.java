@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class confirmFlightController implements Initializable {
+public class ConfirmFlightController implements Initializable {
 
     @FXML
     private JFXButton confirmButton;

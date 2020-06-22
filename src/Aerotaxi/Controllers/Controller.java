@@ -56,7 +56,7 @@ public class Controller {
 
         if(DataWarehouse.validateUser(usernameInput.getText(), passwordInput.getText())){
             try {
-                goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
+                goToScreen(event, "/Resources/admScreen.fxml", "Flybon... ehm Aerotaxi");
             }catch (Exception e){
                 e.printStackTrace();
             }
