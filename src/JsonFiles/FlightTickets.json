@@ -31,38 +31,5 @@
     "cost": 2000,
     "isA": "FlightTicket",
     "isDone": false
-  },
-  {
-    "client": {
-      "username": "Juancho",
-      "password": "Jgonz69",
-      "name": "Juan Cruz",
-      "surname": "Gonzalez",
-      "age": 35,
-      "dni": "22.553.125",
-      "totalSpent": 19100,
-      "bestClass": "Bronze",
-      "isA": "User"
-    },
-    "plane": {
-      "fuelTank": 0,
-      "costPerKm": 12,
-      "capacity": 5,
-      "speed": 220,
-      "propulsionType": "MOTOR_HELICE",
-      "classFee": 3000,
-      "isA": "Bronze"
-    },
-    "date": {
-      "year": 2020,
-      "month": 6,
-      "day": 21
-    },
-    "passengers": 1,
-    "origin": "CORDOBA",
-    "destination": "SANTIAGO",
-    "cost": 19100,
-    "isA": "FlightTicket",
-    "isDone": false
   }
 ]

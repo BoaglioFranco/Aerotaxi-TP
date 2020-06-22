@@ -1,5 +1,6 @@
 package Aerotaxi.Core;
 
+import Aerotaxi.Controllers.AlertController;
 import Aerotaxi.Controllers.MainScreenController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+        primaryStage.setOnCloseRequest(e ->closeProgram());
 
 
     }
@@ -41,6 +43,10 @@ public class Main extends Application {
         Media h = new Media(Paths.get("src/Resources/music.mp3").toUri().toString());
         mediaPlayer = new MediaPlayer(h);
         mediaPlayer.play();
+    }
+
+    public void closeProgram(){
+        DataWarehouse.saveFiles();
     }
 
     public static void main(String[] args) {

@@ -71,6 +71,7 @@ public class RegisterScreenController implements Initializable {
 
     @FXML
     void registerUser(ActionEvent event) {
+
         if(DataWarehouse.isUsernameTaken(userField.getText())){
             errorLabel.setText("El nombre de usuario no esta disponible");
         } else{

@@ -17,6 +17,9 @@ public class MainScreenController {
     private JFXButton flightButton;
 
     @FXML
+    private JFXButton userInfoButton;
+
+    @FXML
     private JFXDrawer drawer;
 
     @FXML
@@ -30,6 +33,19 @@ public class MainScreenController {
             drawer.open();
 
     }
+
+    @FXML
+    void toFlightManagement(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/Resources/flightManagement.fxml"));
+        drawer.setSidePane(pane);
+        if(drawer.isOpened()){
+            drawer.close();
+        }
+        else
+            drawer.open();
+
+    }
+
 
 }
 
