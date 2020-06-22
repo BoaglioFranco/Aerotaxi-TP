@@ -18,6 +18,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        primaryStage.setOnCloseRequest(e ->closeProgram());
         //music();
         Parent root = FXMLLoader.load(getClass().getResource("/Resources/sample.fxml"));
         primaryStage.setTitle("Aerotaxi - Fly with us");
@@ -31,6 +33,11 @@ public class Main extends Application {
 
 
     }
+
+    public void closeProgram(){
+        DataWarehouse.saveFiles();
+    }
+
     MediaPlayer mediaPlayer;
     public void music(){
         Media h = new Media(Paths.get("src/Resources/music.mp3").toUri().toString());

@@ -11,10 +11,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class ConfirmFlightController implements Initializable {
+public class confirmFlightController implements Initializable {
 
     @FXML
-    private JFXButton confirmFlight;
+    private JFXButton confirmButton;
 
     @FXML
     private Label confirmationLabel;
@@ -48,9 +48,9 @@ public class ConfirmFlightController implements Initializable {
     }
 
     @FXML
-    void ConfirmOrder(ActionEvent event) {
-        confirmFlight.setDisable(true);
-        //confirmationLabel.setText("Su vuelo ha sido registrado, gracias por elegirnos.");
+    public void confirmOrder(ActionEvent event) {
+       confirmButton.setDisable(true);
+        confirmationLabel.setText("Su vuelo ha sido registrado correctamente");
         DataWarehouse.addFlight(StaticController.userSelectedFlight);
     }
 

@@ -22,6 +22,7 @@ public class DataWarehouse {
         flightList.stream().filter(x -> x.getDate().isBefore(currentDate)).forEach(FlightTicket::markAsDone);
     }
 
+
     public static User getLoggedUser(){
         return loggedUser;
     }
@@ -30,15 +31,14 @@ public class DataWarehouse {
         return currentDate;
     }
 
-    public static List<User> getUserList() {
-        return userList;
+
+    public static void saveFiles(){
+        fromListToJson("src/JsonFiles/Users.json", userList);
+        fromListToJson("src/JsonFiles/Airplanes.json", aircraftList);
+        fromListToJson("src/JsonFiles/FlightTickets.json", flightList);
     }
 
-    public static List<FlightTicket> getFlightList() {
-        return flightList;
-    }
-
-    public static boolean validateUser(String username, String password){ //metodo para validar el login de un usuario
+    public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
 
         Optional<User> optionalUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
                 .findFirst(); //searching for the user...
@@ -62,9 +62,17 @@ public class DataWarehouse {
 
 
 
+    public static List<FlightTicket> getFlights(LocalDate date){
+        return flightList.stream()
+                .filter(flight -> flight.getDate().isEqual(date))
+                .collect(Collectors.toList());
+    }
+
+
+
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
         List<Aircraft> busyPlanes = new ArrayList<>();
-        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(x -> busyPlanes.add(x.getPlane())); //Hago una lista con todos los vuelos de la fecha por parametro
+        flightList.stream().filter(x -> x.getDate().isEqual(date)).forEach(x -> busyPlanes.add(x.getPlane())); //Hago una lista con todos los vuelos de la fecha por parametro
 
         List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //agrego todos los aviones a la lista
         freePlanes.removeAll(busyPlanes);//remuevo todos los aviones que no estan ocupados
@@ -74,11 +82,6 @@ public class DataWarehouse {
         return freePlanes;
     }
 
-    public static void saveFiles(){
-        fromListToJson("src/JsonFiles/Users.json", userList);
-        fromListToJson("src/JsonFiles/Airplanes.json", aircraftList);
-        fromListToJson("src/JsonFiles/FlightTickets.json", flightList);
-    }
 
     public static List<FlightTicket> getUserFlights(){
         return flightList.stream().filter(x -> x.getClient().equals(loggedUser)).collect(Collectors.toList());
