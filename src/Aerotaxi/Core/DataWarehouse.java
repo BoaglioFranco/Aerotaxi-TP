@@ -62,11 +62,17 @@ public class DataWarehouse {
 
 
 
+    public static List<FlightTicket> getFlights(LocalDate date){
+        return flightList.stream()
+                .filter(flight -> flight.getDate().isEqual(date))
+                .collect(Collectors.toList());
+    }
+
 
 
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
         List<Aircraft> busyPlanes = new ArrayList<>();
-        flightList.stream().filter(x -> x.getDate().equals(date)).forEach(x -> busyPlanes.add(x.getPlane())); //Hago una lista con todos los vuelos de la fecha por parametro
+        flightList.stream().filter(x -> x.getDate().isEqual(date)).forEach(x -> busyPlanes.add(x.getPlane())); //Hago una lista con todos los vuelos de la fecha por parametro
 
         List<Aircraft> freePlanes = new ArrayList<>(aircraftList); //agrego todos los aviones a la lista
         freePlanes.removeAll(busyPlanes);//remuevo todos los aviones que no estan ocupados
