@@ -39,6 +39,9 @@ public class ChoosePlaneController implements Initializable {
     private AnchorPane daddyPane;
 
     @FXML
+    private JFXButton confirmButton;
+
+    @FXML
     private JFXTreeTableView<TableItem> treeView;
 
     private ObservableList<TableItem> dataTable;
@@ -88,6 +91,12 @@ public class ChoosePlaneController implements Initializable {
         treeView.getColumns().addAll(colClase,colCatering,colWifi,colPrecio);
         treeView.setRoot(treeRoot);
         treeView.setShowRoot(false);
+
+        treeView.getSelectionModel().selectFirst();
+
+        if(treeView.getCurrentItemsCount() == 0){
+            confirmButton.setDisable(true);
+        }
     }
 
     public void loadData(int passengers,LocalDate date,City origin,City destination){

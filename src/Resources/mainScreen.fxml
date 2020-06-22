@@ -50,6 +50,11 @@
             </StackPane>
          </children>
       </VBox>
-      <JFXDrawer fx:id="drawer" defaultDrawerSize="540.0" layoutY="74.0" prefHeight="526.0" prefWidth="550.0" />
+      <JFXDrawer fx:id="flightDrawer" defaultDrawerSize="540.0" layoutX="1.0" layoutY="74.0" prefHeight="526.0" prefWidth="550.0" />
+      <ImageView disable="true" fitHeight="526.0" fitWidth="550.0" layoutY="74.0" opacity="0.3">
+         <image>
+            <Image url="@Images/AirplaneBackgraund.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

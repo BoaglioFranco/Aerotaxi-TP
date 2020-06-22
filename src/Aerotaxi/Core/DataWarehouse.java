@@ -22,7 +22,6 @@ public class DataWarehouse {
         flightList.stream().filter(x -> x.getDate().isBefore(currentDate)).forEach(FlightTicket::markAsDone);
     }
 
-
     public static User getLoggedUser(){
         return loggedUser;
     }
@@ -31,7 +30,15 @@ public class DataWarehouse {
         return currentDate;
     }
 
-    public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
+    public static List<User> getUserList() {
+        return userList;
+    }
+
+    public static List<FlightTicket> getFlightList() {
+        return flightList;
+    }
+
+    public static boolean validateUser(String username, String password){ //metodo para validar el login de un usuario
 
         Optional<User> optionalUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
                 .findFirst(); //searching for the user...
@@ -53,13 +60,7 @@ public class DataWarehouse {
         loggedUser = user;
     }
 
-    public static User getLoggedUser(){
-        return loggedUser;
-    }
 
-    public static LocalDate getCurrentDate(){
-        return currentDate;
-    }
 
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){
         List<Aircraft> busyPlanes = new ArrayList<>();

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="526.0" prefWidth="520.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.confirmFlightController">
+<AnchorPane prefHeight="526.0" prefWidth="520.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.ConfirmFlightController">
     <children>
         <JFXButton fx:id="confirmFlight" layoutX="40.0" layoutY="463.0" onAction="#ConfirmOrder" prefHeight="50.0" prefWidth="442.0" style="-fx-background-color: #5BC500;" text="Confirmar vuelo" />
         <Label alignment="CENTER" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="491.0" style="-fx-background-color: #d0d5d6;" text="Detalles de su orden: " textFill="#001a07">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="15.0" layoutY="83.0" />
+      <Label layoutX="15.0" layoutY="83.0" prefHeight="17.0" prefWidth="0.0" />
       <HBox layoutX="32.0" layoutY="72.0" prefHeight="258.0" prefWidth="450.0" spacing="95.0" style="-fx-background-color: #bac1c2; -fx-border-color: #717475;">
          <children>
             <VBox prefHeight="258.0" prefWidth="126.0" spacing="30.0">

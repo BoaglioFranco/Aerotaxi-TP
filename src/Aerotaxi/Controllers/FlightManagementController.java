@@ -2,6 +2,7 @@ package Aerotaxi.Controllers;
 
 import Aerotaxi.Core.DataWarehouse;
 import Aerotaxi.Core.FlightTicket;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
@@ -14,13 +15,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
+import javax.swing.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -30,7 +29,16 @@ public class FlightManagementController implements Initializable {
     @FXML
     private JFXTreeTableView<ItemsTableView> treeTable;
 
+    @FXML
+    private JFXButton cancelButton;
+
+    @FXML
+    private Label errorSelec;
+
     private  ObservableList<ItemsTableView> obs;
+
+    static int cantItems;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -67,6 +75,12 @@ public class FlightManagementController implements Initializable {
         treeTable.getColumns().addAll(colDestino,colOrigen,colFlightday);
         treeTable.setRoot(treeRoot);
         treeTable.setShowRoot(false);
+
+        cantItems = treeTable.getCurrentItemsCount();
+
+        tableElementsValidation();
+
+
     }
 
 
@@ -74,16 +88,38 @@ public class FlightManagementController implements Initializable {
 
         obs = FXCollections.observableArrayList();
 
-        for (FlightTicket e: DataWarehouse.getUserFlights()
-        ) {
+        for (FlightTicket e: DataWarehouse.getUserFlights())
             obs.add(new ItemsTableView(e));
-        }
+
 
     }
 
     @FXML
     void cancelFlight(ActionEvent event) {
 
+        errorSelec.setText("");
+
+        if(AlertController.display("Cancelar vuelo","Esta seguro que desea cancelar su vuelo?", 300,200,
+                "Cancelar vuelo", "Cerra ventana")){
+
+            TreeItem c = (TreeItem)treeTable.getSelectionModel().getSelectedItem();
+            DataWarehouse.cancelFlight(treeTable.getSelectionModel().getSelectedItem().getValue().ticket);
+            c.getParent().getChildren().remove(c);
+            cantItems -= 1;
+            tableElementsValidation();
+
+            }
+
+    }
+
+    void tableElementsValidation(){ /// metodo para evitar que el usuario presione el boton de cancelar vuelos sin vuelos existentes
+
+        if(cantItems == 0)
+            cancelButton.setDisable(true);
+        else{
+            treeTable.getSelectionModel().selectFirst();
+            cancelButton.setDisable(false);
+        }
     }
 
     class ItemsTableView extends RecursiveTreeObject<ItemsTableView> {
@@ -93,6 +129,8 @@ public class FlightManagementController implements Initializable {
         private StringProperty date;
 
         private FlightTicket ticket;
+
+        ItemsTableView(){}
 
         ItemsTableView(FlightTicket A){
             destino = new SimpleStringProperty(A.getDestination().getName());
