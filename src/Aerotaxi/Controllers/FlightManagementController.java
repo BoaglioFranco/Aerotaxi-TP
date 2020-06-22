@@ -91,7 +91,6 @@ public class FlightManagementController implements Initializable {
         for (FlightTicket e: DataWarehouse.getUserFlights())
             obs.add(new ItemsTableView(e));
 
-
     }
 
     @FXML

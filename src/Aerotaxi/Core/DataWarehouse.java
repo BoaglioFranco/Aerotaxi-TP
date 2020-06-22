@@ -31,6 +31,13 @@ public class DataWarehouse {
         return currentDate;
     }
 
+    public static List<User> getUserList() {
+        return userList;
+    }
+
+    public static List<FlightTicket> getFlightList() {
+        return flightList;
+    }
 
     public static void saveFiles(){
         fromListToJson("src/JsonFiles/Users.json", userList);

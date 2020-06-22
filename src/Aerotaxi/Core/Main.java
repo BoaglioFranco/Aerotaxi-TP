@@ -39,9 +39,6 @@ public class Main extends Application {
         mediaPlayer.play();
     }
 
-    public void closeProgram(){
-        DataWarehouse.saveFiles();
-    }
 
     public static void main(String[] args) {
         launch(args);
