@@ -1,7 +1,7 @@
 [
   {
-    "fuelTank": 0,
-    "costPerKm": 12,
+    "fuelTank": 600,
+    "costPerKm": 150,
     "capacity": 5,
     "speed": 220,
     "propulsionType": "MOTOR_HELICE",
@@ -9,8 +9,8 @@
     "isA": "Bronze"
   },
   {
-    "fuelTank": 0,
-    "costPerKm": 15,
+    "fuelTank": 800,
+    "costPerKm": 200,
     "capacity": 8,
     "speed": 290,
     "propulsionType": "MOTOR_PISTONES",
@@ -19,12 +19,49 @@
   },
   {
     "wifi": true,
-    "fuelTank": 0,
-    "costPerKm": 25,
+    "fuelTank": 1000,
+    "costPerKm": 250,
     "capacity": 12,
     "speed": 350,
     "propulsionType": "MOTOR_REACCION",
     "classFee": 6000,
     "isA": "Gold"
+  },
+  {
+    "fuelTank": 600,
+    "costPerKm": 150,
+    "capacity": 5,
+    "speed": 290,
+    "propulsionType": "MOTOR_REACCION",
+    "classFee": 3000,
+    "isA": "Bronze"
+  },
+  {
+    "fuelTank": 800,
+    "costPerKm": 200,
+    "capacity": 8,
+    "speed": 220,
+    "propulsionType": "MOTOR_HELICE",
+    "classFee": 4000,
+    "isA": "Silver"
+  },
+  {
+    "wifi": true,
+    "fuelTank": 1000,
+    "costPerKm": 250,
+    "capacity": 12,
+    "speed": 290,
+    "propulsionType": "MOTOR_PISTONES",
+    "classFee": 6000,
+    "isA": "Gold"
+  },
+  {
+    "fuelTank": 800,
+    "costPerKm": 200,
+    "capacity": 8,
+    "speed": 350,
+    "propulsionType": "MOTOR_REACCION",
+    "classFee": 4000,
+    "isA": "Silver"
   }
 ]

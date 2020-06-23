@@ -6,8 +6,8 @@
     "surname": "Boaglio",
     "age": 21,
     "dni": "41.854.206",
-    "totalSpent": 0,
-    "bestClass": "None",
+    "totalSpent": 1157000,
+    "bestClass": "Gold",
     "isA": "User"
   },
   {
@@ -20,6 +20,71 @@
     "totalSpent": 0,
     "bestClass": "Gold",
     "isA": "Admin"
+  },
+  {
+    "username": "profe123",
+    "password": "javaMaster123",
+    "name": "Gonzalo",
+    "surname": "Orenallo",
+    "age": 25,
+    "dni": "36.854.206",
+    "totalSpent": 364750,
+    "bestClass": "Gold",
+    "isA": "User"
+  },
+  {
+    "username": "jorgitokpo",
+    "password": "jorgejorge",
+    "name": "Jorge",
+    "surname": "Jorgenssen",
+    "age": 34,
+    "dni": "28.555.193",
+    "totalSpent": 0,
+    "bestClass": "None",
+    "isA": "User"
+  },
+  {
+    "username": "martin6446",
+    "password": "contable2020",
+    "name": "Martin",
+    "surname": "Caminero",
+    "age": 24,
+    "dni": "39.185.664",
+    "totalSpent": 715000,
+    "bestClass": "Gold",
+    "isA": "User"
+  },
+  {
+    "username": "marquitosTerraria",
+    "password": "utn2020",
+    "name": "Marcos",
+    "surname": "Ayudante",
+    "age": 24,
+    "dni": "36.282.742",
+    "totalSpent": 285250,
+    "bestClass": "Bronze",
+    "isA": "User"
+  },
+  {
+    "username": "guilleTacho22",
+    "password": "dotaPro46",
+    "name": "Guillermo",
+    "surname": "Mainini",
+    "age": 40,
+    "dni": "25.829.111",
+    "totalSpent": 150000,
+    "bestClass": "Silver",
+    "isA": "User"
+  },
+  {
+    "username": "admin",
+    "password": "admin",
+    "name": "",
+    "surname": "",
+    "age": 0,
+    "dni": "11.111.111",
+    "totalSpent": 0,
+    "bestClass": "Gold",
+    "isA": "Admin"
   }
-
 ]

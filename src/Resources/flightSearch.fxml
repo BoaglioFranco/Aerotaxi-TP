@@ -63,16 +63,11 @@
             <JFXComboBox fx:id="destination" prefHeight="25.0" prefWidth="121.0" />
          </children>
       </HBox>
-      <JFXDatePicker fx:id="departure" defaultColor="BLACK" editable="false" layoutX="34.0" layoutY="284.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="253.0" promptText="                 Dia de Salida" />
-      <Label fx:id="errorLabel" layoutX="35.0" layoutY="374.0" prefHeight="73.0" prefWidth="354.0" textFill="RED">
+      <JFXDatePicker fx:id="departure" defaultColor="BLACK" editable="false" layoutX="34.0" layoutY="284.0" maxHeight="50.0" maxWidth="230.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="230.0" promptText="                 Dia de Salida" />
+      <Label fx:id="errorLabel" layoutX="35.0" layoutY="374.0" prefHeight="73.0" prefWidth="480.0" textFill="RED">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label fx:id="infoLabel" layoutX="326.0" layoutY="217.0" prefHeight="134.0" prefWidth="202.0" textFill="RED">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
       <ImageView layoutX="441.0" layoutY="22.0">
          <image>
             <Image url="@Images/enviar.png" />

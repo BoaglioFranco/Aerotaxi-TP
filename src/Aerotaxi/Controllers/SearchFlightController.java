@@ -73,6 +73,9 @@ public class SearchFlightController implements Initializable {
             else if(departure.getValue() == null || departure.getValue().isBefore(DataWarehouse.getCurrentDate())){
                 errorLabel.setText("Fecha de salida incorrecta");
                 valid = false;
+            }else if(departure.getValue().isAfter(DataWarehouse.getCurrentDate().plusYears(2))){
+                errorLabel.setText("No se puede pedir vuelos con mas de 2 años de anticipacion");
+                valid = false;
             }else {
                 errorLabel.setText("");
                 valid = true;

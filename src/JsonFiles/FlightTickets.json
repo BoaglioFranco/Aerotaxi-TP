@@ -1,2 +1,332 @@
 [
+  {
+    "client": {
+      "username": "franco",
+      "password": "12345",
+      "name": "Franco Jose",
+      "surname": "Boaglio",
+      "age": 21,
+      "dni": "41.854.206",
+      "totalSpent": 1157000,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 1000,
+      "costPerKm": 250,
+      "capacity": 12,
+      "speed": 350,
+      "propulsionType": "MOTOR_REACCION",
+      "classFee": 6000,
+      "isA": "Gold"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 25
+    },
+    "passengers": 2,
+    "origin": "BUENOS_AIRES",
+    "destination": "SANTIAGO",
+    "cost": 363000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "franco",
+      "password": "12345",
+      "name": "Franco Jose",
+      "surname": "Boaglio",
+      "age": 21,
+      "dni": "41.854.206",
+      "totalSpent": 1157000,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 1000,
+      "costPerKm": 250,
+      "capacity": 12,
+      "speed": 350,
+      "propulsionType": "MOTOR_REACCION",
+      "classFee": 6000,
+      "isA": "Gold"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 30
+    },
+    "passengers": 2,
+    "origin": "SANTIAGO",
+    "destination": "MONTEVIDEO",
+    "cost": 538000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "franco",
+      "password": "12345",
+      "name": "Franco Jose",
+      "surname": "Boaglio",
+      "age": 21,
+      "dni": "41.854.206",
+      "totalSpent": 1157000,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 800,
+      "costPerKm": 200,
+      "capacity": 8,
+      "speed": 290,
+      "propulsionType": "MOTOR_PISTONES",
+      "classFee": 4000,
+      "isA": "Silver"
+    },
+    "date": {
+      "year": 2020,
+      "month": 8,
+      "day": 10
+    },
+    "passengers": 4,
+    "origin": "MONTEVIDEO",
+    "destination": "CORDOBA",
+    "cost": 256000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "profe123",
+      "password": "javaMaster123",
+      "name": "Gonzalo",
+      "surname": "Orenallo",
+      "age": 25,
+      "dni": "36.854.206",
+      "totalSpent": 364750,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 600,
+      "costPerKm": 150,
+      "capacity": 5,
+      "speed": 220,
+      "propulsionType": "MOTOR_HELICE",
+      "classFee": 3000,
+      "isA": "Bronze"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 26
+    },
+    "passengers": 3,
+    "origin": "BUENOS_AIRES",
+    "destination": "CORDOBA",
+    "cost": 117750,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "profe123",
+      "password": "javaMaster123",
+      "name": "Gonzalo",
+      "surname": "Orenallo",
+      "age": 25,
+      "dni": "36.854.206",
+      "totalSpent": 364750,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 1000,
+      "costPerKm": 250,
+      "capacity": 12,
+      "speed": 290,
+      "propulsionType": "MOTOR_PISTONES",
+      "classFee": 6000,
+      "isA": "Gold"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 30
+    },
+    "passengers": 1,
+    "origin": "BUENOS_AIRES",
+    "destination": "MONTEVIDEO",
+    "cost": 247000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "martin6446",
+      "password": "contable2020",
+      "name": "Martin",
+      "surname": "Caminero",
+      "age": 24,
+      "dni": "39.185.664",
+      "totalSpent": 715000,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 1000,
+      "costPerKm": 250,
+      "capacity": 12,
+      "speed": 290,
+      "propulsionType": "MOTOR_PISTONES",
+      "classFee": 6000,
+      "isA": "Gold"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 29
+    },
+    "passengers": 10,
+    "origin": "SANTIAGO",
+    "destination": "MONTEVIDEO",
+    "cost": 566000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "martin6446",
+      "password": "contable2020",
+      "name": "Martin",
+      "surname": "Caminero",
+      "age": 24,
+      "dni": "39.185.664",
+      "totalSpent": 715000,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 600,
+      "costPerKm": 150,
+      "capacity": 5,
+      "speed": 220,
+      "propulsionType": "MOTOR_HELICE",
+      "classFee": 3000,
+      "isA": "Bronze"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 27
+    },
+    "passengers": 1,
+    "origin": "MONTEVIDEO",
+    "destination": "BUENOS_AIRES",
+    "cost": 149000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "guilleTacho22",
+      "password": "dotaPro46",
+      "name": "Guillermo",
+      "surname": "Mainini",
+      "age": 40,
+      "dni": "25.829.111",
+      "totalSpent": 150000,
+      "bestClass": "Silver",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 800,
+      "costPerKm": 200,
+      "capacity": 8,
+      "speed": 220,
+      "propulsionType": "MOTOR_HELICE",
+      "classFee": 4000,
+      "isA": "Silver"
+    },
+    "date": {
+      "year": 2020,
+      "month": 6,
+      "day": 29
+    },
+    "passengers": 2,
+    "origin": "BUENOS_AIRES",
+    "destination": "CORDOBA",
+    "cost": 150000,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "marquitosTerraria",
+      "password": "utn2020",
+      "name": "Marcos",
+      "surname": "Ayudante",
+      "age": 24,
+      "dni": "36.282.742",
+      "totalSpent": 174500,
+      "bestClass": "Bronze",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 600,
+      "costPerKm": 150,
+      "capacity": 5,
+      "speed": 290,
+      "propulsionType": "MOTOR_REACCION",
+      "classFee": 3000,
+      "isA": "Bronze"
+    },
+    "date": {
+      "year": 2020,
+      "month": 12,
+      "day": 10
+    },
+    "passengers": 4,
+    "origin": "SANTIAGO",
+    "destination": "CORDOBA",
+    "cost": 174500,
+    "isA": "FlightTicket",
+    "isDone": false
+  },
+  {
+    "client": {
+      "username": "marquitosTerraria",
+      "password": "utn2020",
+      "name": "Marcos",
+      "surname": "Ayudante",
+      "age": 24,
+      "dni": "36.282.742",
+      "totalSpent": 285250,
+      "bestClass": "Bronze",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 600,
+      "costPerKm": 150,
+      "capacity": 5,
+      "speed": 290,
+      "propulsionType": "MOTOR_REACCION",
+      "classFee": 3000,
+      "isA": "Bronze"
+    },
+    "date": {
+      "year": 2020,
+      "month": 7,
+      "day": 2
+    },
+    "passengers": 1,
+    "origin": "BUENOS_AIRES",
+    "destination": "CORDOBA",
+    "cost": 110750,
+    "isA": "FlightTicket",
+    "isDone": false
+  }
 ]
