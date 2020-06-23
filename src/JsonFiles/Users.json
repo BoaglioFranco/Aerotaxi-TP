@@ -41,5 +41,16 @@
     "totalSpent": 0,
     "bestClass": "Gold",
     "isA": "Admin"
+  },
+  {
+    "username": "frankkoarg",
+    "password": "fran99",
+    "name": "Franco Jose",
+    "surname": "Boaglio",
+    "age": 21,
+    "dni": "41.854.206",
+    "totalSpent": 30375,
+    "bestClass": "Gold",
+    "isA": "User"
   }
 ]

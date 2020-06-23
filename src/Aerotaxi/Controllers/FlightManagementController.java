@@ -32,8 +32,6 @@ public class FlightManagementController implements Initializable {
     @FXML
     private JFXButton cancelButton;
 
-    @FXML
-    private Label errorSelec;
 
     private  ObservableList<ItemsTableView> obs;
 
@@ -44,6 +42,8 @@ public class FlightManagementController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         loadData();
+
+        treeTable.setPlaceholder(new Label ("No tiene ningun vuelo pendiente"));
 
         JFXTreeTableColumn<ItemsTableView, String> colDestino = new JFXTreeTableColumn<ItemsTableView, String>("Destino");
         colDestino.setPrefWidth(100);
@@ -96,7 +96,6 @@ public class FlightManagementController implements Initializable {
     @FXML
     void cancelFlight(ActionEvent event) {
 
-        errorSelec.setText("");
 
         if(AlertController.display("Cancelar vuelo","Esta seguro que desea cancelar su vuelo?", 300,200,
                 "Cancelar vuelo", "Cerra ventana")){

@@ -29,10 +29,10 @@ public class SearchFlightController implements Initializable {
     private JFXTextField passengers;
 
     @FXML
-    private JFXComboBox<City> origin;
+    private JFXComboBox<String> origin;
 
     @FXML
-    private JFXComboBox<City> destination;
+    private JFXComboBox<String> destination;
 
     @FXML
     private JFXDatePicker departure;
@@ -47,8 +47,8 @@ public class SearchFlightController implements Initializable {
 
         origin.setPromptText(" Ciudad de origen");
         destination.setPromptText("  Ciudad destino");
-        origin.getItems().addAll(City.BUENOS_AIRES,City.CORDOBA,City.MONTEVIDEO,City.SANTIAGO);
-        destination.getItems().addAll(City.BUENOS_AIRES,City.CORDOBA,City.MONTEVIDEO,City.SANTIAGO);
+        origin.getItems().addAll(City.BUENOS_AIRES.getName(),City.CORDOBA.getName(),City.MONTEVIDEO.getName(),City.SANTIAGO.getName());
+        destination.getItems().addAll(City.BUENOS_AIRES.getName(),City.CORDOBA.getName(),City.MONTEVIDEO.getName(),City.SANTIAGO.getName());
     }
 
     public boolean validateUserTicket(){
@@ -95,7 +95,7 @@ public class SearchFlightController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Resources/choosePlane.fxml"));
             int pass = Integer.parseInt(passengers.getText());
 
-            StaticController.loadData(pass,departure.getValue(),origin.getValue(),destination.getValue());
+            StaticController.loadData(pass,departure.getValue(),City.of(origin.getValue()),City.of(destination.getValue()));
 
             AnchorPane pane2 = FXMLLoader.load(getClass().getResource("/Resources/choosePlane.fxml"));
             pane.getChildren().setAll(pane2);

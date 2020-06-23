@@ -3,26 +3,49 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.MainScreenController">
    <children>
-      <HBox prefHeight="74.0" prefWidth="800.0" style="-fx-background-color: #4C516D;" />
+      <AnchorPane prefHeight="74.0" prefWidth="800.0" style="-fx-background-color: #4C516D;">
+         <children>
+            <StackPane layoutX="693.0" layoutY="41.0">
+               <children>
+                  <Label text="Cerrar Sesion" textFill="#e1d9ff" underline="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#logout" opacity="0.0" prefHeight="25.0" prefWidth="80.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+            <Label fx:id="welcomeLabel" layoutX="16.0" layoutY="22.0" text="Bienvenido," textFill="#e1d9ff">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
       <VBox layoutX="550.0" layoutY="74.0" prefHeight="526.0" prefWidth="250.0">
          <children>
             <StackPane prefHeight="263.0" prefWidth="250.0" style="-fx-background-color: #7092be;">
                <children>
                   <JFXButton fx:id="flightButton" onAction="#orderFlightScreen" prefHeight="354.0" prefWidth="380.0" text=" " />
-                  <Label prefHeight="51.0" prefWidth="209.0" text="Ordena tu vuelo">
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="209.0" text="Ordenar un vuelo">
                      <StackPane.margin>
-                        <Insets top="-155.0" />
+                        <Insets top="150.0" />
                      </StackPane.margin>
                      <font>
                         <Font size="27.0" />
@@ -33,7 +56,7 @@
                         <Image url="@Images/botonavion.png" />
                      </image>
                      <StackPane.margin>
-                        <Insets top="20.0" />
+                        <Insets top="-20.0" />
                      </StackPane.margin>
                   </ImageView>
                </children>
@@ -45,7 +68,18 @@
                      <image>
                         <Image url="@Images/ticket.png" />
                      </image>
+                     <StackPane.margin>
+                        <Insets top="-20.0" />
+                     </StackPane.margin>
                   </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="209.0" text="Mis Vuelos">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                     <StackPane.margin>
+                        <Insets top="155.0" />
+                     </StackPane.margin>
+                  </Label>
                </children>
             </StackPane>
          </children>

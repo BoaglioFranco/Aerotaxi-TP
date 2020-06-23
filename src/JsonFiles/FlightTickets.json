@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "client": {
+      "username": "frankkoarg",
+      "password": "fran99",
+      "name": "Franco Jose",
+      "surname": "Boaglio",
+      "age": 21,
+      "dni": "41.854.206",
+      "totalSpent": 30375,
+      "bestClass": "Gold",
+      "isA": "User"
+    },
+    "plane": {
+      "fuelTank": 0,
+      "costPerKm": 25,
+      "capacity": 12,
+      "speed": 350,
+      "propulsionType": "MOTOR_REACCION",
+      "classFee": 6000,
+      "isA": "Gold"
+    },
+    "date": {
+      "year": 2020,
+      "month": 7,
+      "day": 8
+    },
+    "passengers": 2,
+    "origin": "CORDOBA",
+    "destination": "BUENOS_AIRES",
+    "cost": 30375,
+    "isA": "FlightTicket",
+    "isDone": false
+  }
+]

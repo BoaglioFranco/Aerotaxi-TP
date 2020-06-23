@@ -18,10 +18,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
@@ -51,6 +57,8 @@ public class AdminController implements Initializable {
 
         loadTableItems(); // Carga de las obsList con los datos.
 
+        flightsTableView.setPlaceholder(new Label ("No hay ningun vuelo cargado al sistema"));
+        userTableView.setPlaceholder(new Label ("No hay ningun usuario cargado al sistema"));
         //// Columnas Usuarios
         JFXTreeTableColumn<ItemUser, String> colUsername = new JFXTreeTableColumn<ItemUser, String>("Username");
         colUsername.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<ItemUser, String>, ObservableValue<String>>() {
@@ -174,8 +182,20 @@ public class AdminController implements Initializable {
 
     }
 
+    @FXML
     public void searchDateFlights(ActionEvent actionEvent) {
         textField.setText(datePicker.getValue().toString());
+    }
+
+    @FXML
+    void logout(ActionEvent event) throws IOException {
+        DataWarehouse.logout();
+        Parent root = FXMLLoader.load(getClass().getResource("/Resources/login.fxml"));
+        Scene scene = new Scene(root, 800, 600);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.setTitle("Aerotaxi - Fly with us");
+        window.show();
     }
 
     class ItemUser extends RecursiveTreeObject<ItemUser> {

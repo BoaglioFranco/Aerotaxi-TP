@@ -36,7 +36,7 @@
                               <Font name="Microsoft JhengHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="usernameInput" text="franco" unFocusColor="WHITE">
+                        <JFXTextField fx:id="usernameInput" unFocusColor="WHITE">
                            <font>
                               <Font name="System Italic" size="15.0" />
                            </font>
@@ -50,7 +50,7 @@
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <JFXPasswordField fx:id="passwordInput" focusColor="BLACK" unFocusColor="WHITE">
+                        <JFXPasswordField fx:id="passwordInput" unFocusColor="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>

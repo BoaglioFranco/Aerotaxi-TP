@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.input.MouseEvent;
@@ -48,6 +49,8 @@ public class ChoosePlaneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        treeView.setPlaceholder(new Label("No tenemos ningun avion de esa capacidad disponible en esta fecha"));
 
         loadData(StaticController.passengers,StaticController.date,StaticController.origin,StaticController.destination);
 

@@ -31,6 +31,15 @@ public enum City {
         return kms == null ? -1 : kms;
     }
 
+    public static City of(String value){
+        if(value.equals("Buenos Aires")) return City.BUENOS_AIRES;
+        if(value.equals("Montevideo")) return City.MONTEVIDEO;
+        if(value.equals("Cordoba")) return City.CORDOBA;
+        if(value.equals("Santiago")) return City.SANTIAGO;
+        return null;
+    }
+
+
     public String getName(){
         return name;
     }

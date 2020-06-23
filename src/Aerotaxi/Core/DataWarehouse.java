@@ -11,21 +11,25 @@ import static Aerotaxi.Utilities.JsonSaveLoad.fromListToJson;
 
 public class DataWarehouse {
 
-    private static List<User> userList = fromJsonToList("src/JsonFiles/Users.json");
-    private static List<Aircraft> aircraftList = fromJsonToList("src/JsonFiles/Airplanes.json");
-    private static List<FlightTicket> flightList = fromJsonToList("src/JsonFiles/FlightTickets.json");
+    private static final List<User> userList = fromJsonToList("src/JsonFiles/Users.json");
+    private static final List<Aircraft> aircraftList = fromJsonToList("src/JsonFiles/Airplanes.json");
+    private static final List<FlightTicket> flightList = fromJsonToList("src/JsonFiles/FlightTickets.json");
 
     private static User loggedUser;
     private static LocalDate  currentDate = LocalDate.now();
 
     static { //actualiza los vuelos para marcar los que ya sucedieron como hechos
-        flightList.stream().filter(x -> x.getDate().isBefore(currentDate)).forEach(FlightTicket::markAsDone);
+        for(FlightTicket flight : flightList){
+            flight.setDone(flight.getDate().isBefore(currentDate));
+        }
     }
 
 
     public static User getLoggedUser(){
         return loggedUser;
     }
+
+    public static void logout(){ loggedUser = null;}
 
     public static LocalDate getCurrentDate(){
         return currentDate;

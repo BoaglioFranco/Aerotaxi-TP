@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.FlightManagementController">
+<AnchorPane prefHeight="526.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.FlightManagementController">
    <children>
       <JFXButton fx:id="cancelButton" buttonType="RAISED" layoutX="348.0" layoutY="435.0" onAction="#cancelFlight" prefHeight="63.0" prefWidth="178.0" style="-fx-background-color: #EF3340;" text="Cancelar vuelo">
          <font>

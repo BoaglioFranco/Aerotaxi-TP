@@ -70,8 +70,8 @@ public class FlightTicket {
         return isDone;
     }
 
-    public void markAsDone(){
-        isDone = true;
+    public void setDone(boolean bool){
+        isDone = bool;
     }
 
 
