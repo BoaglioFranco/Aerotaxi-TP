@@ -47,17 +47,13 @@ public class LoginController {
         goToScreen(actionEvent, "/Resources/registerScreen.fxml", "Aerotaxi - Registrarse");
     }
 
-    public void verifyLogin(ActionEvent event){
+    public void verifyLogin(ActionEvent event) throws IOException{
 
         if(DataWarehouse.validateUser(usernameInput.getText(), passwordInput.getText())){
-            try {
                 if(DataWarehouse.getLoggedUser() instanceof Admin)
                     goToScreen(event, "/Resources/admScreen.fxml", "Administracion - Aerotaxi");
                 else
                     goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
-            }catch (Exception e){
-                e.printStackTrace();
-            }
         }
         else{
             errorLabel.setText("Nombre de usuario o contraseña incorrectos");

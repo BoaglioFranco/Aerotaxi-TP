@@ -2,9 +2,11 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D9E1E2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aerotaxi.Controllers.RegisterScreenController">
@@ -14,25 +16,31 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-
-      <HBox layoutX="17.0" layoutY="121.0" spacing="5.0">
+      <HBox layoutX="17.0" layoutY="121.0" prefHeight="70.0" prefWidth="309.0">
          <children>
-            <Label prefHeight="25.0" prefWidth="156.0" text="Nombre del Usuario">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="15.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="userField" />
-         </children>
-      </HBox>
-      <HBox layoutX="31.0" layoutY="182.0" spacing="10.0">
-         <children>
-            <Label prefHeight="25.0" prefWidth="129.0" text="Contraseña">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="15.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="passField" />
+            <VBox spacing="65.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="156.0" text="Nombre del Usuario">
+                     <font>
+                        <Font name="Microsoft JhengHei Light" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="25.0" prefWidth="129.0" text="Contraseña">
+                     <font>
+                        <Font name="Microsoft JhengHei Light" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox spacing="65.0">
+               <children>
+                  <JFXTextField fx:id="userField" />
+                  <JFXTextField fx:id="passField" />
+               </children>
+            </VBox>
          </children>
       </HBox>
       <HBox layoutX="23.0" layoutY="338.0" spacing="10.0">
@@ -90,13 +98,11 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-      <Label layoutX="322.0" layoutY="138.0" text="Entre 5 y 20 caracteres" />
-      <Label layoutX="322.0" layoutY="199.0" text="Entre 5 y 20 caracteres" />
-      <HBox alignment="CENTER" layoutY="-6.0" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #4C516D;">
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #4C516D;">
          <children>
-            <Label alignment="TOP_LEFT" text="Aerotaxi - Registrarse" textFill="#f7ff02">
+            <Label alignment="TOP_LEFT" text="Aerotaxi - Registrarse" textFill="#e1d9ff">
                <font>
-                  <Font name="Comic Sans MS" size="22.0" />
+                  <Font name="Microsoft YaHei Light" size="26.0" />
                </font>
             </Label>
          </children>
@@ -106,5 +112,7 @@
             <Font size="22.0" />
          </font>
       </Label>
+      <Label layoutX="347.0" layoutY="219.0" text="Entre 5 y 20 caracteres" />
+      <Label layoutX="347.0" layoutY="127.0" text="Entre 5 y 20 caracteres" />
    </children>
 </AnchorPane>

@@ -89,8 +89,9 @@ public class FlightManagementController implements Initializable {
         obs = FXCollections.observableArrayList();
 
         for (FlightTicket e: DataWarehouse.getUserFlights())
+            if(!e.isDone()) {
             obs.add(new ItemsTableView(e));
-
+        }
     }
 
     @FXML

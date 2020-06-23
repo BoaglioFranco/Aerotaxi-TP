@@ -16,9 +16,9 @@ public class DataWarehouse {
     private static final List<FlightTicket> flightList = fromJsonToList("src/JsonFiles/FlightTickets.json");
 
     private static User loggedUser;
-    private static LocalDate  currentDate = LocalDate.now();
+    private static final LocalDate  currentDate = LocalDate.now();
 
-    static { //actualiza los vuelos para marcar los que ya sucedieron como hechos
+    static { //marca los vuelos como hechos o no segun con la fecha del sistema al momento de abrir el programa
         for(FlightTicket flight : flightList){
             flight.setDone(flight.getDate().isBefore(currentDate));
         }
@@ -49,7 +49,7 @@ public class DataWarehouse {
         fromListToJson("src/JsonFiles/FlightTickets.json", flightList);
     }
 
-    public static boolean validateUser( String username, String password){ //metodo para validar el login de un usuario
+    public static boolean validateUser( String username, String password){ //login validation
 
         Optional<User> optionalUser = userList.stream().filter(c -> c.getUsername().equals(username) && c.getPassword().equals(password))
                 .findFirst(); //searching for the user...
@@ -70,15 +70,6 @@ public class DataWarehouse {
         userList.add(user);
         loggedUser = user;
     }
-
-
-
-    public static List<FlightTicket> getFlights(LocalDate date){
-        return flightList.stream()
-                .filter(flight -> flight.getDate().isEqual(date))
-                .collect(Collectors.toList());
-    }
-
 
 
     public static List<Aircraft> getAvailablePlanes(LocalDate date, int passengers){

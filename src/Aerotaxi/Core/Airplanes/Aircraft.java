@@ -28,9 +28,6 @@ public class Aircraft {
         return fuelTank;
     }
 
-    public void setFuelTank(int fuelTank) {
-        this.fuelTank = fuelTank;
-    }
 
     public int getCostPerKm() {
         return costPerKm;
@@ -44,9 +41,6 @@ public class Aircraft {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
 
     public int getSpeed() {
         return speed;

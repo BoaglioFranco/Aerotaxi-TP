@@ -70,7 +70,7 @@ public class RegisterScreenController implements Initializable {
 
 
     @FXML
-    void registerUser(ActionEvent event) {
+    void registerUser(ActionEvent event) throws IOException{
 
         if(DataWarehouse.isUsernameTaken(userField.getText())){
             errorLabel.setText("El nombre de usuario no esta disponible");
@@ -78,21 +78,14 @@ public class RegisterScreenController implements Initializable {
             if(validateInput()){
                 System.out.println("Registracion validarda");
                 DataWarehouse.addAndLogInUser(us);
-                try {
                     goToScreen(event, "/Resources/mainScreen.fxml", "Flybon... ehm Aerotaxi");
-                }catch (Exception e){  System.out.println("HASTAAAA LA PROXIMAAAA");}
-
             }
         }
     }
 
 
-    public void gotoPrincipalScreen(ActionEvent actionEvent){
-        try {
+    public void gotoPrincipalScreen(ActionEvent actionEvent) throws IOException{
             goToScreen(actionEvent, "/Resources/login.fxml", "Aerotaxi");
-        }catch (Exception e) {
-            System.out.println("Hasta la proximaaaaaaa");
-        }
     }
 
 

@@ -2,55 +2,24 @@
   {
     "username": "franco",
     "password": "12345",
-    "name": "franco",
-    "surname": "b",
-    "age": 69,
-    "dni": "69420420",
-    "totalSpent": -443000,
-    "bestClass": "Gold",
-    "isA": "User"
-  },
-  {
-    "username": "facu69",
-    "password": "12345",
-    "name": "facu",
-    "surname": "b",
-    "age": 69,
-    "dni": "69699996",
-    "totalSpent": 22600,
-    "bestClass": "Bronze",
-    "isA": "User"
-  },
-  {
-    "username": "FACU-ADMIN",
-    "password": "BOCA-YO-TE-AMO",
-    "name": "",
-    "surname": "",
-    "age": 0,
-    "dni": "",
+    "name": "Franco Jose",
+    "surname": "Boaglio",
+    "age": 21,
+    "dni": "41.854.206",
     "totalSpent": 0,
-    "isA": "Admin"
+    "bestClass": "None",
+    "isA": "User"
   },
   {
-    "username": "facu201",
+    "username": "facundo",
     "password": "jej0x",
-    "name": "facundo",
+    "name": "Facundo",
     "surname": "montebro",
     "age": 21,
     "dni": "41.333.208",
     "totalSpent": 0,
     "bestClass": "Gold",
     "isA": "Admin"
-  },
-  {
-    "username": "frankkoarg",
-    "password": "fran99",
-    "name": "Franco Jose",
-    "surname": "Boaglio",
-    "age": 21,
-    "dni": "41.854.206",
-    "totalSpent": 30375,
-    "bestClass": "Gold",
-    "isA": "User"
   }
+
 ]

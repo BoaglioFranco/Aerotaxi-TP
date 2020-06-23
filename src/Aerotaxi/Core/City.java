@@ -7,7 +7,7 @@ import java.util.Set;
 public enum City {
     BUENOS_AIRES("Buenos Aires"), MONTEVIDEO("Montevideo"), CORDOBA("Cordoba"), SANTIAGO("Santiago");
 
-    private static Map<Set<City>, Integer> distanceMap;
+    private static final Map<Set<City>, Integer> distanceMap;
     private String name= "";
 
     City(String name){

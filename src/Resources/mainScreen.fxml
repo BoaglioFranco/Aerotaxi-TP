@@ -17,7 +17,7 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="800.0" style="-fx-background-color: #4C516D;">
          <children>
-            <StackPane layoutX="693.0" layoutY="41.0">
+            <StackPane layoutX="713.0" layoutY="48.0">
                <children>
                   <Label text="Cerrar Sesion" textFill="#e1d9ff" underline="true">
                      <font>
@@ -42,7 +42,6 @@
          <children>
             <StackPane prefHeight="263.0" prefWidth="250.0" style="-fx-background-color: #7092be;">
                <children>
-                  <JFXButton fx:id="flightButton" onAction="#orderFlightScreen" prefHeight="354.0" prefWidth="380.0" text=" " />
                   <Label alignment="CENTER" prefHeight="51.0" prefWidth="209.0" text="Ordenar un vuelo">
                      <StackPane.margin>
                         <Insets top="150.0" />
@@ -59,11 +58,11 @@
                         <Insets top="-20.0" />
                      </StackPane.margin>
                   </ImageView>
+                  <JFXButton fx:id="flightButton" onAction="#orderFlightScreen" prefHeight="354.0" prefWidth="380.0" text=" " />
                </children>
             </StackPane>
             <StackPane layoutX="10.0" layoutY="10.0" prefHeight="263.0" prefWidth="250.0" style="-fx-background-color: #7f7f7f;">
                <children>
-                  <JFXButton fx:id="userInfoButton" onAction="#toFlightManagement" prefHeight="342.0" prefWidth="357.0" text=" " />
                   <ImageView>
                      <image>
                         <Image url="@Images/ticket.png" />
@@ -80,6 +79,7 @@
                         <Insets top="155.0" />
                      </StackPane.margin>
                   </Label>
+                  <JFXButton fx:id="userInfoButton" onAction="#toFlightManagement" prefHeight="342.0" prefWidth="357.0" text=" " />
                </children>
             </StackPane>
          </children>
