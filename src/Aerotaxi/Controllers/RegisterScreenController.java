@@ -20,9 +20,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegisterScreenController implements Initializable {
-
-    @FXML
-    private JFXButton confirmButton;
+    
     @FXML
     private JFXTextField userField;
     @FXML

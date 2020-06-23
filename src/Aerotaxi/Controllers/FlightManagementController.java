@@ -16,12 +16,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
-
-import javax.swing.*;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class FlightManagementController implements Initializable {
@@ -31,7 +27,6 @@ public class FlightManagementController implements Initializable {
 
     @FXML
     private JFXButton cancelButton;
-
 
     private  ObservableList<ItemsTableView> obs;
 
